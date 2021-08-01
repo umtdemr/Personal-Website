@@ -1,0 +1,20 @@
+.footer_container {
+  display: flex;
+  justify-content: space-between;
+  .footer_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .footer_logo {
+      font-size: 20px;
+    }
+  }
+  .footer_right {
+    .socials {
+      .social__item {
+        font-size: 20px;
+        margin-left: 8px;
+      }
+    }
+  }
+}

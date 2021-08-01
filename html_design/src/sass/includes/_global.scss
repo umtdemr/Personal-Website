@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: opensans;
+  src: "fonts/opensans.ttf";
+}
+
+body {
+  background-color: #ffff;
+  font-family: opensans, sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.logo {
+  font-family: "Helvetica", sans-serif;
+}
+
+button {
+  border: none;
+  color: #333;
+  cursor: pointer;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+img {
+  max-width: 100%;
+}
+
+.content {
+  transition: 0.5s;
+  will-change: transform;
+}
+
+h2 {
+  color: $port-gore;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.full_divider {
+  width: 100%;
+  height: 2px;
+  background-color: $medium-purple;
+  opacity: 0.2;
+}
+
+footer {
+  margin: 100px 0 91px 0;
+}

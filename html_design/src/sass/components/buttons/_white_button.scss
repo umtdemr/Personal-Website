@@ -1,0 +1,14 @@
+.white_button{
+    background-color: #fff;
+    font-size: 16px;
+    padding: 17px 29px;
+    color: $port-gore;
+    border-radius: 50px;
+    box-shadow: 0px 5px 5px rgba(75, 93, 104, 0.1);
+    
+    &.with_arrow{
+        display: flex;
+        align-items: center;
+        
+    }
+}

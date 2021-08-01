@@ -1,0 +1,114 @@
+.features_container{
+    margin-bottom: 150px;
+    h2 {
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    span{
+        display: block;
+        text-align: center;
+        color: $river-bed;
+        line-height: 28px;
+        font-size: 18x;
+        margin-bottom: 70px;
+    }
+
+    .features {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .feature__item {
+            width: 35%;
+            height: 358px;
+            padding: 10px 15px;
+            border-radius: 50px;
+            position: relative;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+
+            &:nth-child(1){
+                background-image: url('../svg/features1.svg');
+            }
+            
+            &:nth-child(2){
+                background-image: url('../svg/features2.svg');
+            }
+            &:nth-child(3){
+                background-image: url('../svg/features3.svg');
+            }
+            &:nth-child(4){
+                background-image: url('../svg/features4.svg');
+            }
+            &:nth-child(odd){
+                margin-right: 83px;
+            }
+
+            img {
+                position: absolute;
+                width: 35%; 
+                left: -16%;
+            }
+            &--info{
+                margin-left: 20%;
+                h3{
+                    font-size: 24px;
+                    color: $port-gore;
+                    margin-bottom: 20px;
+                    font-weight: 400;
+                    left: 20%;
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 25px;
+                    color: $river-bed;
+                }
+            }
+
+        }
+    }
+}
+
+
+@media screen and (max-width: 820px) {
+    .features_container{
+        .features {
+            .feature__item{
+                width: 70%;
+                &:nth-child(odd){
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+    /*.features_container{
+        .features {
+            .feature__item{
+                width: 40%;
+                flex-direction: column;
+                img {
+                    top: -20%;
+                    left: 40%;
+                    transform: translate3d(20%, 50%, 0);
+                    margin-bottom: 30px;
+                }
+                &--info{
+                    h3{
+                        font-size: 19px;
+                    }
+                    p {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }*/
+
+}
+
+@media screen and (max-width: 600px) { 
+    
+}
