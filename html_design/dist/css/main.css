@@ -665,15 +665,16 @@ footer {
 /* line 1, src/sass/components/containers/_features_container.scss */
 .features_container {
   margin-bottom: 150px;
+  margin-top: 50px;
 }
 
-/* line 3, src/sass/components/containers/_features_container.scss */
+/* line 4, src/sass/components/containers/_features_container.scss */
 .features_container h2 {
   margin-bottom: 50px;
   text-align: center;
 }
 
-/* line 7, src/sass/components/containers/_features_container.scss */
+/* line 8, src/sass/components/containers/_features_container.scss */
 .features_container span {
   display: block;
   text-align: center;
@@ -683,7 +684,7 @@ footer {
   margin-bottom: 70px;
 }
 
-/* line 16, src/sass/components/containers/_features_container.scss */
+/* line 17, src/sass/components/containers/_features_container.scss */
 .features_container .features {
   width: 100%;
   display: -webkit-box;
@@ -696,7 +697,7 @@ footer {
       flex-wrap: wrap;
 }
 
-/* line 21, src/sass/components/containers/_features_container.scss */
+/* line 22, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item {
   width: 35%;
   height: 358px;
@@ -716,44 +717,44 @@ footer {
   margin-bottom: 50px;
 }
 
-/* line 33, src/sass/components/containers/_features_container.scss */
+/* line 34, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item:nth-child(1) {
   background-image: url("../svg/features1.svg");
 }
 
-/* line 37, src/sass/components/containers/_features_container.scss */
+/* line 38, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item:nth-child(2) {
   background-image: url("../svg/features2.svg");
 }
 
-/* line 40, src/sass/components/containers/_features_container.scss */
+/* line 41, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item:nth-child(3) {
   background-image: url("../svg/features3.svg");
 }
 
-/* line 43, src/sass/components/containers/_features_container.scss */
+/* line 44, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item:nth-child(4) {
   background-image: url("../svg/features4.svg");
 }
 
-/* line 46, src/sass/components/containers/_features_container.scss */
+/* line 47, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item:nth-child(odd) {
   margin-right: 83px;
 }
 
-/* line 50, src/sass/components/containers/_features_container.scss */
+/* line 51, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item img {
   position: absolute;
   width: 35%;
   left: -16%;
 }
 
-/* line 55, src/sass/components/containers/_features_container.scss */
+/* line 56, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item--info {
   margin-left: 20%;
 }
 
-/* line 57, src/sass/components/containers/_features_container.scss */
+/* line 58, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item--info h3 {
   font-size: 24px;
   color: #212353;
@@ -762,7 +763,7 @@ footer {
   left: 20%;
 }
 
-/* line 64, src/sass/components/containers/_features_container.scss */
+/* line 65, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item--info p {
   font-size: 16px;
   line-height: 25px;
@@ -770,11 +771,11 @@ footer {
 }
 
 @media screen and (max-width: 820px) {
-  /* line 79, src/sass/components/containers/_features_container.scss */
+  /* line 80, src/sass/components/containers/_features_container.scss */
   .features_container .features .feature__item {
     width: 70%;
   }
-  /* line 81, src/sass/components/containers/_features_container.scss */
+  /* line 82, src/sass/components/containers/_features_container.scss */
   .features_container .features .feature__item:nth-child(odd) {
     margin-right: 0px;
   }
@@ -1068,16 +1069,164 @@ footer {
 /* line 1, src/sass/components/containers/_about_me_container.scss */
 .about_me_container {
   margin-top: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-/* line 3, src/sass/components/containers/_about_me_container.scss */
+/* line 7, src/sass/components/containers/_about_me_container.scss */
 .about_me_container h2 {
   font-size: 45px;
 }
 
-/* line 6, src/sass/components/containers/_about_me_container.scss */
+/* line 10, src/sass/components/containers/_about_me_container.scss */
 .about_me_container p {
   color: #4B5D68;
   line-height: 26px;
   font-size: 18px;
+}
+
+/* line 15, src/sass/components/containers/_about_me_container.scss */
+.about_me_container .about_me__info {
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+}
+
+/* line 18, src/sass/components/containers/_about_me_container.scss */
+.about_me_container .about_me__img {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+/* line 20, src/sass/components/containers/_about_me_container.scss */
+.about_me_container .about_me__img img {
+  width: 50%;
+  display: block;
+  margin: 30px auto;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 29, src/sass/components/containers/_about_me_container.scss */
+  .about_me_container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  /* line 32, src/sass/components/containers/_about_me_container.scss */
+  .about_me_container .about_me__img img {
+    width: 100%;
+  }
+}
+
+/* line 1, src/sass/components/containers/_skills.scss */
+.skills {
+  margin-top: 50px;
+  width: 100%;
+}
+
+/* line 4, src/sass/components/containers/_skills.scss */
+.skills__title {
+  font-size: 27px;
+}
+
+/* line 7, src/sass/components/containers/_skills.scss */
+.skills__info {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* line 11, src/sass/components/containers/_skills.scss */
+.skills__info--techs {
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+/* line 16, src/sass/components/containers/_skills.scss */
+.skills__info--techs .tech_item {
+  font-size: 18px;
+  padding: 20px 5px;
+}
+
+/* line 20, src/sass/components/containers/_skills.scss */
+.skills__info--techs .tech_selection {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  top: 0px;
+  -webkit-transition: 400ms all;
+  transition: 400ms all;
+  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* line 29, src/sass/components/containers/_skills.scss */
+.skills__info--summary {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+
+/* line 31, src/sass/components/containers/_skills.scss */
+.skills__info--summary .summary_title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #9C69E2;
+  font-weight: 600;
+}
+
+/* line 37, src/sass/components/containers/_skills.scss */
+.skills__info--summary p {
+  font-size: 20px;
+  line-height: 20px;
+  color: #4B5D68;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 48, src/sass/components/containers/_skills.scss */
+  .skills__title {
+    font-size: 20px;
+  }
+  /* line 51, src/sass/components/containers/_skills.scss */
+  .skills__info {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  /* line 53, src/sass/components/containers/_skills.scss */
+  .skills__info--techs {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+  }
+  /* line 55, src/sass/components/containers/_skills.scss */
+  .skills__info--techs .tech_item {
+    font-size: 13px;
+  }
+  /* line 59, src/sass/components/containers/_skills.scss */
+  .skills__info--summary {
+    -ms-flex-preferred-size: 70%;
+        flex-basis: 70%;
+  }
 }

@@ -1,5 +1,9 @@
 .about_me_container{
     margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     h2{
         font-size: 45px;
     }
@@ -8,4 +12,26 @@
         line-height: 26px;
         font-size: 18px;
     }
+  .about_me__info{
+    flex-basis: 60%;
+  }
+  .about_me__img{
+    flex-basis: 30%;
+    img{
+      width: 50%;
+      display: block;
+      margin: 30px auto;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+ .about_me_container{
+   flex-direction: row;
+   .about_me__img {
+     img{
+       width: 100%;
+     }
+   }
+ } 
 }
