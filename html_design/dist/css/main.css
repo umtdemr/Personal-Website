@@ -1230,3 +1230,36 @@ footer {
         flex-basis: 70%;
   }
 }
+
+/* line 1, src/sass/components/containers/_contact_header.scss */
+.contact_header {
+  padding-top: 70px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+/* line 5, src/sass/components/containers/_contact_header.scss */
+.contact_header .headline {
+  text-align: center;
+  font-size: 30px;
+}
+
+/* line 8, src/sass/components/containers/_contact_header.scss */
+.contact_header .headline h1 {
+  color: #333;
+}
+
+/* line 12, src/sass/components/containers/_contact_header.scss */
+.contact_header .skewed_container {
+  pointer-events: none;
+  position: absolute;
+  bottom: -108px;
+  left: 0;
+  right: 0;
+  top: 50%;
+  -webkit-transform: skewY(-12deg);
+          transform: skewY(-12deg);
+  -webkit-transition: opacity .2s ease-out;
+  transition: opacity .2s ease-out;
+  will-change: transform;
+}
