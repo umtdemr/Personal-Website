@@ -77,16 +77,30 @@
             </div>
           </div>
           <section class="contact_form_section">
-            <div class="form_column">
+            <div class="container form_column">
               <div class="form_container">
                 <form action="" method="post">
-                  <input type="text">
+                  <fieldset>
+                    <div class="form_group">
+                      <label for="name">Ad</label>
+                      <input type="text" id="name" name="name" placeholder="Jane" class="invalid" required>
+                    </div>
+                    <div class="form_group">
+                      <label for="email">E-Posta</label>
+                      <input type="email" id="email" name="email" placeholder="jane.doe@gmail.com" required>
+                    </div>
+                    <div class="form_group">
+                      <label for="message">Mesaj</label>
+                      <textarea name="message" id="message" placeholder="Selam Ümit, ... hakkında yazıyorum..." required></textarea>
+                    </div>
+                  </fieldset>
+                  <button>Gönder</button>
                 </form>
               </div>
             </div>
             <div class="secondary_column">
               <div class="why-me">
-                <p class="info-text">Because i am bilmem</p>
+                <p class="info-text">Benimle İletişime Geç</p>
               </div>
             </div>
             

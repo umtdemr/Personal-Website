@@ -1,0 +1,41 @@
+input, select, textarea{
+  display: block;
+  // background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: 4px;
+  color: #32325d;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  padding: 5px 20px 8px 0;
+  transition: background-color .1s ease-in,color .1s ease-in;
+  background-color: #f6f9fc;
+  padding: 5px 20px 8px 13px;
+  background-image: url(https://stripe.com/img/v3/contact_sales/form/validation-error.svg);
+  background-repeat: no-repeat;
+  background-position-x: -5000px;
+  background-position-y: 9px;
+  background-size: 20px 20px;
+  &.invalid{
+    border-color: #ffa27b !important;
+    box-shadow: 0 0 0 1px #ffa27b !important;
+    background-color: transparent !important;
+    background-position-x: calc(100% - 16px);
+    background-position-y: 9px;
+  }
+}
+label {
+  color: #424770;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 26px;
+  align-self: center;
+  text-transform: none;
+}
+
+input:focus, textarea:focus, select:focus{
+  box-shadow: 0 0 0 1px #e4effa;
+}
