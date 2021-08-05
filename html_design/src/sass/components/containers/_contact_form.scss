@@ -1,19 +1,36 @@
 
 .contact_form_section{
+  position: relative;
+  z-index: 2;
+  padding: 40px 0 90px 0;
+  display: flex;
+  justify-content: center;
   .form_column{
+    flex-basis: 54%;
+    display: flex;
+    justify-content: center;
     .form_container{
       border-radius: 4px;
       box-shadow: 0 50px 100px -20px rgba(50,50,93,.25),0 30px 60px -30px rgba(0,0,0,.3),0 -18px 60px -10px rgba(0,0,0,.025);
       max-width: 645px;
       background: #fff;
+      width: 100%;
+      padding: 50px 0;
       form{
         padding: 10px 18px 20px 24px;
         .form_group{
           margin-bottom: 15px;
+          &.has-focus{
+            label {
+              color: $medium-purple;
+            }
+          }
           label{
             flex: 32%;
             margin-right: 20px;
             align-self: flex-start;
+            transition: 300ms color;
+            will-change: color;
           }
           input, textarea, select{
             flex: 68%;
@@ -24,6 +41,62 @@
               background: #fff;
             }
           }
+          textarea{
+            min-height: 170px;
+          }
+        }
+        .contact_send{
+          float: right;
+          padding: 5px 10px;
+          // background-color: #6772e5;
+          background-color: $port-gore;
+          transition: 300ms all ease;
+          font-size: 15px;
+          border-radius: 3px;
+          color: #fff;
+          &:hover, &:active{
+            background-color: rgba($color: $port-gore, $alpha: .9);
+            transform: translateY(-2px);
+          }
+          &.disabled{
+            background-color: rgba($color: $port-gore, $alpha: .6);
+          }
+        }
+      }
+    }
+  }
+  .secondary_column{
+    margin-left: 20px;
+    flex-basis: 35%;
+    color: #fff;
+    .why-me{
+      padding-top: 200px;
+      &--title{
+        font-size: 26px;
+        color: #fff;
+        margin-bottom: 25px;
+        font-weight: 400;
+      }
+      &--list{
+        padding-left: 38px;
+        li{
+          font-size: 17px;
+          line-height: 25px;
+          margin-bottom: 20px;
+          padding-right: 20px;
+          position: relative;
+          max-width: 250px;
+          &::before{
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: -35px;
+            height: 20px;
+            width: 20px;
+            background: url(https://stripe.com/img/v3/contact_sales/why-stripe/check.svg);
+              background-size: auto;
+            background-size: 100% 100%;
+          }
         }
       }
     }
@@ -31,26 +104,47 @@
 }
 
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 992px){
  
 .contact_form_section{
+  flex-direction: column;
   .form_column{
+    flex-basis: 100%;
+    width: 90%;
+    margin: 0 auto;
     .form_container{
       max-width: 645px;
       background: #fff;
       form{
-        padding: 10px 18px 20px 24px;
         .form_group{
           flex-direction: column;
           margin-bottom: 17px;
+
           label{
-            flex: 32%;
             margin-bottom: 10px;
-            align-self: flex-start;
           }
           input, textarea, select{
-            flex: 68%;
+            width: 100%;
           }
+        }
+      }
+    }
+  }
+  .secondary_column{
+    margin-left: 0;
+    flex-basis: 100%;
+    .why-me{
+      padding-top: 90px;
+      &--title{
+        text-align: center;
+      }
+      &--list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+        li{
+          width: 100%;
         }
       }
     }

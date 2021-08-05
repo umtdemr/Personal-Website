@@ -57,5 +57,8 @@ h2 {
 }
 
 footer {
-  margin: 100px 0 91px 0;
+  padding: 100px 0 91px 0;
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
 }
