@@ -13,7 +13,8 @@ var settings = {
 	plugin: true,
 	fonts: true,
 	reload: true,
-	images: true
+	images: true,
+	ts: true
 };
 
 
@@ -53,6 +54,9 @@ var paths = {
 		input: 'src/images/**/*',
 		output: 'dist/images/'
 	},
+	ts: {
+		output: 'dist/js/'
+	},
 	reload: './dist/'
 };
 
@@ -78,6 +82,7 @@ var banner = {
 
 // General
 var {gulp, src, dest, watch, series, parallel} = require('gulp');
+
 var del = require('del');
 var flatmap = require('gulp-flatmap');
 var lazypipe = require('lazypipe');
@@ -105,6 +110,8 @@ var svgmin = require('gulp-svgmin');
 var browserSync = require('browser-sync');
 
 
+var ts = require("gulp-typescript");
+var tsProject = ts.createProject("tsconfig.json");
 /**
  * Gulp Tasks
  */
@@ -291,6 +298,12 @@ var copyImages = function (done) {
 
 };
 
+var copyTs = function(done) {
+	if (!settings.ts) return done();
+
+	return tsProject.src().pipe(tsProject()).js.pipe(dest(paths.ts.output));
+}
+
 // Watch for changes to the src directory
 var startServer = function (done) {
 
@@ -340,6 +353,7 @@ exports.default = series(
 		copyPlugins,
 		copyFonts,
 		copyImages,
+		copyTs,
 	)
 );
 
