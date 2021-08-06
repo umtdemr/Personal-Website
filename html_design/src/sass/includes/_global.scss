@@ -7,6 +7,10 @@
   src: "fonts/opensans.ttf";
 }
 
+html{
+  overflow-x: hidden;
+}
+
 body {
   background-color: #ffff;
   font-family: opensans, sans-serif;

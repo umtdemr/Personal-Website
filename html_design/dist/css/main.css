@@ -148,13 +148,18 @@ table {
 }
 
 /* line 10, src/sass/includes/_global.scss */
+html {
+  overflow-x: hidden;
+}
+
+/* line 14, src/sass/includes/_global.scss */
 body {
   background-color: #ffff;
   font-family: opensans, sans-serif;
   overflow-x: hidden;
 }
 
-/* line 16, src/sass/includes/_global.scss */
+/* line 20, src/sass/includes/_global.scss */
 h1,
 h2,
 h3,
@@ -165,7 +170,7 @@ h5,
   font-family: "Helvetica", sans-serif;
 }
 
-/* line 24, src/sass/includes/_global.scss */
+/* line 28, src/sass/includes/_global.scss */
 h1--faded,
 h2--faded,
 h3--faded,
@@ -175,7 +180,7 @@ h5--faded,
   color: rgba(0, 0, 0, 0.3);
 }
 
-/* line 29, src/sass/includes/_global.scss */
+/* line 33, src/sass/includes/_global.scss */
 button {
   border: none;
   color: #333;
@@ -183,32 +188,32 @@ button {
   text-align: center;
 }
 
-/* line 36, src/sass/includes/_global.scss */
+/* line 40, src/sass/includes/_global.scss */
 a {
   text-decoration: none;
   color: #000;
 }
 
-/* line 41, src/sass/includes/_global.scss */
+/* line 45, src/sass/includes/_global.scss */
 img {
   max-width: 100%;
 }
 
-/* line 45, src/sass/includes/_global.scss */
+/* line 49, src/sass/includes/_global.scss */
 .content {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   will-change: transform;
 }
 
-/* line 50, src/sass/includes/_global.scss */
+/* line 54, src/sass/includes/_global.scss */
 h2 {
   color: #212353;
   font-size: 40px;
   font-weight: 700;
 }
 
-/* line 56, src/sass/includes/_global.scss */
+/* line 60, src/sass/includes/_global.scss */
 .full_divider {
   width: 100%;
   height: 2px;
@@ -216,7 +221,7 @@ h2 {
   opacity: 0.2;
 }
 
-/* line 63, src/sass/includes/_global.scss */
+/* line 67, src/sass/includes/_global.scss */
 footer {
   padding: 100px 0 91px 0;
   position: relative;
@@ -1165,12 +1170,15 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-/* line 11, src/sass/components/containers/_skills.scss */
+/* line 12, src/sass/components/containers/_skills.scss */
 .skills__info--techs {
-  -ms-flex-preferred-size: 35%;
-      flex-basis: 35%;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1181,13 +1189,13 @@ footer {
   position: relative;
 }
 
-/* line 16, src/sass/components/containers/_skills.scss */
+/* line 17, src/sass/components/containers/_skills.scss */
 .skills__info--techs .tech_item {
   font-size: 18px;
   padding: 20px 5px;
 }
 
-/* line 20, src/sass/components/containers/_skills.scss */
+/* line 21, src/sass/components/containers/_skills.scss */
 .skills__info--techs .tech_selection {
   position: absolute;
   width: 100%;
@@ -1199,13 +1207,13 @@ footer {
           box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* line 29, src/sass/components/containers/_skills.scss */
+/* line 30, src/sass/components/containers/_skills.scss */
 .skills__info--summary {
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
 }
 
-/* line 31, src/sass/components/containers/_skills.scss */
+/* line 32, src/sass/components/containers/_skills.scss */
 .skills__info--summary .summary_title {
   font-size: 22px;
   margin-bottom: 20px;
@@ -1213,37 +1221,47 @@ footer {
   font-weight: 600;
 }
 
-/* line 37, src/sass/components/containers/_skills.scss */
+/* line 38, src/sass/components/containers/_skills.scss */
 .skills__info--summary p {
   font-size: 20px;
   line-height: 20px;
   color: #4B5D68;
+  line-height: 27px;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 48, src/sass/components/containers/_skills.scss */
+  /* line 50, src/sass/components/containers/_skills.scss */
   .skills__title {
     font-size: 20px;
   }
-  /* line 51, src/sass/components/containers/_skills.scss */
+  /* line 53, src/sass/components/containers/_skills.scss */
   .skills__info {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  /* line 53, src/sass/components/containers/_skills.scss */
+  /* line 55, src/sass/components/containers/_skills.scss */
   .skills__info--techs {
     -ms-flex-preferred-size: 25%;
         flex-basis: 25%;
   }
-  /* line 55, src/sass/components/containers/_skills.scss */
+  /* line 57, src/sass/components/containers/_skills.scss */
   .skills__info--techs .tech_item {
     font-size: 13px;
   }
-  /* line 59, src/sass/components/containers/_skills.scss */
+  /* line 61, src/sass/components/containers/_skills.scss */
   .skills__info--summary {
     -ms-flex-preferred-size: 70%;
         flex-basis: 70%;
+  }
+  /* line 63, src/sass/components/containers/_skills.scss */
+  .skills__info--summary .summary_title {
+    font-size: 16px;
+  }
+  /* line 66, src/sass/components/containers/_skills.scss */
+  .skills__info--summary p {
+    font-size: 14px;
+    line-height: 17px;
   }
 }
 
