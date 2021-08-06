@@ -19,7 +19,11 @@ h3,
 h4,
 h5,
 .logo {
+  color: #000;
   font-family: "Helvetica", sans-serif;
+  &--faded{
+    color: rgba($color: #000000, $alpha: .3);
+  }
 }
 
 button {

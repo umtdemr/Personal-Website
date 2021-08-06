@@ -19,6 +19,8 @@
 // }
 
 .header {
+  z-index: 1;
+  position: relative;
   &_wrapper {
     width: 100%;
     background: rgb(246, 250, 253);
