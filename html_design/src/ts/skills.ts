@@ -1,7 +1,15 @@
+interface SelectableArea {
+  active: boolean,
+  item: HTMLLinkElement,
+}
+
+
 class Skills{
   private wrapper: HTMLDivElement;
   private selection: HTMLDivElement;
-  private position_y: number; 
+
+  items: SelectableArea[] = [];
+  private _position_y: number; 
 
   constructor(wr: HTMLDivElement){
     this.wrapper = wr;
@@ -9,25 +17,52 @@ class Skills{
       try {
         if(wr.children[key].classList.contains("tech_selection")){
           this.selection = wr.children[key] as HTMLDivElement;
+          this.getCurrentPositionFromDiv();
+        }else if(wr.children[key].classList.contains("tech_item")){
+          this.items.push({
+            active: wr.children[key].classList.contains("active"),
+            item: wr.children[key] as HTMLLinkElement,
+          });
         }
-      } catch {
-        
+      } catch{
       }
     }
+
+    this.addEvents();
   }
 
+  private set position_y(pos: number){
+    this._position_y = pos;
+  }
+
+  private get position_y(){
+    return this._position_y;
+  }
 
   private getCurrentPositionFromDiv(){
-    return getTranslateValue(this.selection).y;
+    let position = +getTranslateValue(this.selection).y 
+    this.position_y = position;
+    return position;
   }
+
   moveobj(pos: number) {
     this.selection.style.transform = `translateY(${pos}px)`;
+  }
+
+  addEvents(){
+    this.items.forEach(selectable_item => {
+      selectable_item.item.addEventListener('click', event => {
+        event.preventDefault();
+        console.log("tıkla bana")
+      });
+    });
   }
 
   print(){
     console.log(this.wrapper);
     console.log(this.selection);
-    console.log(this.getCurrentPositionFromDiv());
+    console.log(this.position_y);
+    console.log(this.items);
   }
 }
 
@@ -46,7 +81,7 @@ function getTranslateValue(element: HTMLElement) {
   }
 
  // Can either be 2d or 3d transform
- const matrixType = matrix.includes('3d') ? '3d' : '2d'
+ const matrixType = '2d'
  const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ')
 
  // 2d matrices have 6 values

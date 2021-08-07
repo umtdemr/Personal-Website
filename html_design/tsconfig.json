@@ -2,6 +2,6 @@
     "files": ["src/ts/skills.ts"],
     "compilerOptions": {
       "noImplicitAny": true,
-      "target": "es2016",
+      "target": "es5",
     }
 }
