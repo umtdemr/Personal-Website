@@ -17,14 +17,22 @@
       .tech_item{
         font-size: 18px;
         padding: 20px 5px;
+        padding-left: 30%;
+        transition: 500ms color;
+        &.active{
+          color: #fff;
+        }
       }
       .tech_selection{
         position: absolute;
         width: 100%;
-        height: 40px;
+        height: 58px;
         top: 0px;
         transition: 400ms all;
         box-shadow: 0px 3px 5px rgba($color: #000000, $alpha: .2);
+        z-index: -1;
+        background: linear-gradient(90deg,#777bf8,#68d4f8 200%);
+        border-radius: 40px;
       }
     }
     &--summary{

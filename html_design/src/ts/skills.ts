@@ -1,4 +1,5 @@
 interface SelectableArea {
+  index: number,
   active: boolean,
   item: HTMLLinkElement,
 }
@@ -13,6 +14,7 @@ class Skills{
 
   constructor(wr: HTMLDivElement){
     this.wrapper = wr;
+    let index = 0;
     for (let key in wr.children){
       try {
         if(wr.children[key].classList.contains("tech_selection")){
@@ -20,9 +22,11 @@ class Skills{
           this.getCurrentPositionFromDiv();
         }else if(wr.children[key].classList.contains("tech_item")){
           this.items.push({
+            index: index,
             active: wr.children[key].classList.contains("active"),
             item: wr.children[key] as HTMLLinkElement,
           });
+          index++;
         }
       } catch{
       }
@@ -46,16 +50,40 @@ class Skills{
   }
 
   moveobj(pos: number) {
-    this.selection.style.transform = `translateY(${pos}px)`;
+    this.selection.style.transform = `translateY(${pos}%)`;
   }
 
   addEvents(){
     this.items.forEach(selectable_item => {
-      selectable_item.item.addEventListener('click', event => {
+      let item = selectable_item.item;
+      item.addEventListener('click', event => {
         event.preventDefault();
-        console.log("tıkla bana")
+        console.log("--")
+        console.log(this.items);
+        let selected_index = selectable_item.index;
+        console.log(selected_index);
+        let position = selected_index * 100;
+        this.moveobj(position);
+        this.addActiveToSelected(selected_index);
       });
     });
+  }
+  
+  removeActiveClass(){
+    this.items = this.items.map(selectable_item => {
+      let item = selectable_item.item;
+      item.classList.remove("active");
+      return {index: selectable_item.index, active: false, item: item};
+    });
+    console.log(this.items);
+  }
+
+  addActiveToSelected(index: number){
+    this.removeActiveClass();
+    let selectable_item = this.items[index];
+    selectable_item.item.classList.add("active");
+    selectable_item.active = true;
+    this.items[index] = selectable_item;
   }
 
   print(){
