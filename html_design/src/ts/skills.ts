@@ -33,6 +33,7 @@ class Skills{
     }
 
     this.addEvents();
+    this.initialAction();
   }
 
   private set position_y(pos: number){
@@ -49,8 +50,26 @@ class Skills{
     return position;
   }
 
+  private calculatePercentOfSpan(width: number): number{
+    const percent = (width * 100) / this.wrapper.offsetWidth;
+    return Math.floor(percent);
+  };
+
+  private initialAction() {
+    this.moveobj(0);
+    const firstElementWidth = this.items[1].item.querySelector("span").offsetWidth;
+    console.log(firstElementWidth);
+    this.setMaxWidth(
+      this.calculatePercentOfSpan(firstElementWidth + 13)
+    );
+  }
+
   moveobj(pos: number) {
     this.selection.style.transform = `translateY(${pos}%)`;
+  }
+
+  setMaxWidth(width: number){
+    this.selection.style.maxWidth = `${width}%`;
   }
 
   addEvents(){
@@ -58,16 +77,19 @@ class Skills{
       let item = selectable_item.item;
       item.addEventListener('click', event => {
         event.preventDefault();
-        console.log("--")
-        console.log(this.items);
         let selected_index = selectable_item.index;
-        console.log(selected_index);
         let position = selected_index * 100;
         this.moveobj(position);
         this.addActiveToSelected(selected_index);
+
+        const spanWidth = item.querySelector("span").offsetWidth;
+        const selectionNewWidth = this.calculatePercentOfSpan(spanWidth);
+        this.setMaxWidth(selectionNewWidth);
+          
       });
     });
   }
+
   
   removeActiveClass(){
     this.items = this.items.map(selectable_item => {
@@ -75,7 +97,6 @@ class Skills{
       item.classList.remove("active");
       return {index: selectable_item.index, active: false, item: item};
     });
-    console.log(this.items);
   }
 
   addActiveToSelected(index: number){
