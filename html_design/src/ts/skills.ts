@@ -7,13 +7,15 @@ interface SelectableArea {
 
 class Skills{
   private wrapper: HTMLDivElement;
+  private infoWrapper: HTMLDivElement;
   private selection: HTMLDivElement;
 
   items: SelectableArea[] = [];
   private _position_y: number; 
 
-  constructor(wr: HTMLDivElement){
+  constructor(wr: HTMLDivElement, infoWr: HTMLDivElement){
     this.wrapper = wr;
+    this.infoWrapper = infoWr;
     let index = 0;
     for (let key in wr.children){
       try {
@@ -72,6 +74,16 @@ class Skills{
     this.selection.style.maxWidth = `${width}%`;
   }
 
+  setVisible(item: HTMLLinkElement){
+    const activeTarget = item.dataset["target"];
+    let activeItem = this.infoWrapper.querySelector(`[data-content="${activeTarget}"]`);
+    let allInfoItems = this.infoWrapper.querySelectorAll(".content");
+    allInfoItems.forEach(item => {
+      item.classList.remove("active");
+    });
+    activeItem.classList.add("active");
+  }
+
   addEvents(){
     this.items.forEach(selectable_item => {
       let item = selectable_item.item;
@@ -81,7 +93,7 @@ class Skills{
         let position = selected_index * 100;
         this.moveobj(position);
         this.addActiveToSelected(selected_index);
-
+        this.setVisible(item);
         const spanWidth = item.querySelector("span").offsetWidth;
         const selectionNewWidth = this.calculatePercentOfSpan(spanWidth);
         this.setMaxWidth(selectionNewWidth);

@@ -43,6 +43,17 @@
     }
     &--summary{
       flex-basis: 60%;
+      .content{
+        opacity: 0;
+        max-height: 0px;
+        transition: 300ms all;
+        overflow: hidden;
+        &.active{
+          transform: translateX(0);
+          max-height: 1000px;
+          opacity: 1;
+        }
+      }
       .summary_title{
         font-size: 22px;
         margin-bottom: 20px;

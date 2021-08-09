@@ -1236,6 +1236,23 @@ footer {
 }
 
 /* line 46, src/sass/components/containers/_skills.scss */
+.skills__info--summary .content {
+  opacity: 0;
+  max-height: 0px;
+  -webkit-transition: 300ms all;
+  transition: 300ms all;
+  overflow: hidden;
+}
+
+/* line 51, src/sass/components/containers/_skills.scss */
+.skills__info--summary .content.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  max-height: 1000px;
+  opacity: 1;
+}
+
+/* line 57, src/sass/components/containers/_skills.scss */
 .skills__info--summary .summary_title {
   font-size: 22px;
   margin-bottom: 20px;
@@ -1243,7 +1260,7 @@ footer {
   font-weight: 600;
 }
 
-/* line 52, src/sass/components/containers/_skills.scss */
+/* line 63, src/sass/components/containers/_skills.scss */
 .skills__info--summary p {
   font-size: 20px;
   line-height: 20px;
@@ -1252,35 +1269,35 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 64, src/sass/components/containers/_skills.scss */
+  /* line 75, src/sass/components/containers/_skills.scss */
   .skills__title {
     font-size: 20px;
   }
-  /* line 67, src/sass/components/containers/_skills.scss */
+  /* line 78, src/sass/components/containers/_skills.scss */
   .skills__info {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  /* line 69, src/sass/components/containers/_skills.scss */
+  /* line 80, src/sass/components/containers/_skills.scss */
   .skills__info--techs {
     -ms-flex-preferred-size: 25%;
         flex-basis: 25%;
   }
-  /* line 71, src/sass/components/containers/_skills.scss */
+  /* line 82, src/sass/components/containers/_skills.scss */
   .skills__info--techs .tech_item {
     font-size: 13px;
   }
-  /* line 75, src/sass/components/containers/_skills.scss */
+  /* line 86, src/sass/components/containers/_skills.scss */
   .skills__info--summary {
     -ms-flex-preferred-size: 70%;
         flex-basis: 70%;
   }
-  /* line 77, src/sass/components/containers/_skills.scss */
+  /* line 88, src/sass/components/containers/_skills.scss */
   .skills__info--summary .summary_title {
     font-size: 16px;
   }
-  /* line 80, src/sass/components/containers/_skills.scss */
+  /* line 91, src/sass/components/containers/_skills.scss */
   .skills__info--summary p {
     font-size: 14px;
     line-height: 17px;
