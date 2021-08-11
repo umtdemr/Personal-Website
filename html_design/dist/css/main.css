@@ -1170,12 +1170,9 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-/* line 12, src/sass/components/containers/_skills.scss */
+/* line 11, src/sass/components/containers/_skills.scss */
 .skills__info--techs {
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
@@ -1189,7 +1186,7 @@ footer {
   position: relative;
 }
 
-/* line 17, src/sass/components/containers/_skills.scss */
+/* line 16, src/sass/components/containers/_skills.scss */
 .skills__info--techs .tech_item {
   font-size: 18px;
   -webkit-transition: 300ms color ease-in-out;
@@ -1198,18 +1195,18 @@ footer {
           transition-delay: 150ms;
 }
 
-/* line 19, src/sass/components/containers/_skills.scss */
+/* line 18, src/sass/components/containers/_skills.scss */
 .skills__info--techs .tech_item span {
   padding: 20px 5px;
   display: inline-block;
 }
 
-/* line 25, src/sass/components/containers/_skills.scss */
+/* line 24, src/sass/components/containers/_skills.scss */
 .skills__info--techs .tech_item.active {
   color: #fff;
 }
 
-/* line 29, src/sass/components/containers/_skills.scss */
+/* line 28, src/sass/components/containers/_skills.scss */
 .skills__info--techs .tech_selection {
   position: absolute;
   width: 100%;
@@ -1229,30 +1226,29 @@ footer {
   padding-right: 2px;
 }
 
-/* line 44, src/sass/components/containers/_skills.scss */
+/* line 43, src/sass/components/containers/_skills.scss */
 .skills__info--summary {
   -ms-flex-preferred-size: 60%;
       flex-basis: 60%;
+  position: relative;
+  margin-top: 29px;
 }
 
-/* line 46, src/sass/components/containers/_skills.scss */
+/* line 47, src/sass/components/containers/_skills.scss */
 .skills__info--summary .content {
   opacity: 0;
-  max-height: 0px;
   -webkit-transition: 300ms all;
   transition: 300ms all;
   overflow: hidden;
+  position: absolute;
 }
 
-/* line 51, src/sass/components/containers/_skills.scss */
+/* line 53, src/sass/components/containers/_skills.scss */
 .skills__info--summary .content.active {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  max-height: 1000px;
   opacity: 1;
 }
 
-/* line 57, src/sass/components/containers/_skills.scss */
+/* line 58, src/sass/components/containers/_skills.scss */
 .skills__info--summary .summary_title {
   font-size: 22px;
   margin-bottom: 20px;
@@ -1260,7 +1256,7 @@ footer {
   font-weight: 600;
 }
 
-/* line 63, src/sass/components/containers/_skills.scss */
+/* line 64, src/sass/components/containers/_skills.scss */
 .skills__info--summary p {
   font-size: 20px;
   line-height: 20px;
@@ -1269,15 +1265,9 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 75, src/sass/components/containers/_skills.scss */
+  /* line 76, src/sass/components/containers/_skills.scss */
   .skills__title {
     font-size: 20px;
-  }
-  /* line 78, src/sass/components/containers/_skills.scss */
-  .skills__info {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   /* line 80, src/sass/components/containers/_skills.scss */
   .skills__info--techs {
@@ -1288,16 +1278,21 @@ footer {
   .skills__info--techs .tech_item {
     font-size: 13px;
   }
-  /* line 86, src/sass/components/containers/_skills.scss */
+  /* line 85, src/sass/components/containers/_skills.scss */
+  .skills__info--techs .tech_selection {
+    height: 53px;
+  }
+  /* line 89, src/sass/components/containers/_skills.scss */
   .skills__info--summary {
     -ms-flex-preferred-size: 70%;
         flex-basis: 70%;
+    margin-top: 26.5px;
   }
-  /* line 88, src/sass/components/containers/_skills.scss */
+  /* line 92, src/sass/components/containers/_skills.scss */
   .skills__info--summary .summary_title {
     font-size: 16px;
   }
-  /* line 91, src/sass/components/containers/_skills.scss */
+  /* line 95, src/sass/components/containers/_skills.scss */
   .skills__info--summary p {
     font-size: 14px;
     line-height: 17px;

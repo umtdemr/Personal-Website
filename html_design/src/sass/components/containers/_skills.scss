@@ -8,7 +8,6 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     &--techs{
       flex-basis: 30%;
       display: flex;
@@ -43,15 +42,17 @@
     }
     &--summary{
       flex-basis: 60%;
+      position: relative;
+      margin-top: 29px;
       .content{
         opacity: 0;
-        max-height: 0px;
         transition: 300ms all;
         overflow: hidden;
+        position: absolute;
+        // transform: translateX(30000px);
         &.active{
-          transform: translateX(0);
-          max-height: 1000px;
           opacity: 1;
+          // transform: translateX(0px);
         }
       }
       .summary_title{
@@ -76,15 +77,18 @@
       font-size: 20px;
     }
     &__info{
-      align-items: center;
       &--techs{
         flex-basis: 25%;
         .tech_item{
           font-size: 13px;
         }
+        .tech_selection{
+          height: 53px;
+        }
       }
       &--summary{
         flex-basis: 70%;
+        margin-top: 26.5px;
         .summary_title{
           font-size: 16px;
         }

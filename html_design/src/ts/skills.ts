@@ -59,11 +59,36 @@ class Skills{
 
   private initialAction() {
     this.moveobj(0);
-    const firstElementWidth = this.items[1].item.querySelector("span").offsetWidth;
+    const firstElementWidth = this.items[0].item.querySelector("span").offsetWidth;
     console.log(firstElementWidth);
     this.setMaxWidth(
-      this.calculatePercentOfSpan(firstElementWidth + 13)
+      this.calculatePercentOfSpan(firstElementWidth)
     );
+    this.onResizeSetup();
+  }
+
+  private getActiveItem(): HTMLLinkElement{
+    let foundItem: HTMLLinkElement;
+    this.items.forEach(item => {
+      if (item.active){
+        foundItem = item.item;
+      }
+    });
+    return foundItem;
+  }
+
+  private getPercentMaxWidth(item: HTMLLinkElement): number {
+      const spanWidth = item.querySelector("span").offsetWidth;
+      const selectionNewWidth = this.calculatePercentOfSpan(spanWidth);
+      return selectionNewWidth;
+  }
+
+  private onResizeSetup() {
+    window.addEventListener("resize", () => {
+      let activeItem = this.getActiveItem();
+      const spanWidth = this.getPercentMaxWidth(activeItem);
+      this.setMaxWidth(spanWidth);
+    });
   }
 
   moveobj(pos: number) {
@@ -94,8 +119,7 @@ class Skills{
         this.moveobj(position);
         this.addActiveToSelected(selected_index);
         this.setVisible(item);
-        const spanWidth = item.querySelector("span").offsetWidth;
-        const selectionNewWidth = this.calculatePercentOfSpan(spanWidth);
+        const selectionNewWidth = this.getPercentMaxWidth(item);
         this.setMaxWidth(selectionNewWidth);
           
       });
