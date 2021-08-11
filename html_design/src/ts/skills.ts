@@ -60,7 +60,6 @@ class Skills{
   private initialAction() {
     this.moveobj(0);
     const firstElementWidth = this.items[0].item.querySelector("span").offsetWidth;
-    console.log(firstElementWidth);
     this.setMaxWidth(
       this.calculatePercentOfSpan(firstElementWidth)
     );
@@ -144,10 +143,10 @@ class Skills{
   }
 
   print(){
-    console.log(this.wrapper);
-    console.log(this.selection);
-    console.log(this.position_y);
-    console.log(this.items);
+    // console.log(this.wrapper);
+    // console.log(this.selection);
+    // console.log(this.position_y);
+    // console.log(this.items);
   }
 }
 

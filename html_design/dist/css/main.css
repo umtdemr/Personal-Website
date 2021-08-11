@@ -837,9 +837,10 @@ footer {
   color: #fff;
   font-size: 52px;
   font-weight: 700;
+  text-align: center;
 }
 
-/* line 13, src/sass/components/containers/_testimonials_container.scss */
+/* line 14, src/sass/components/containers/_testimonials_container.scss */
 .testimonials_container .testimonial {
   position: absolute;
   margin-top: 88px;
@@ -851,7 +852,7 @@ footer {
   transition: 1s;
 }
 
-/* line 20, src/sass/components/containers/_testimonials_container.scss */
+/* line 21, src/sass/components/containers/_testimonials_container.scss */
 .testimonials_container .testimonial__item {
   background-color: #fff;
   display: -webkit-box;
@@ -866,7 +867,7 @@ footer {
           box-shadow: 0px 20px 0px rgba(156, 105, 226, 0.3);
 }
 
-/* line 29, src/sass/components/containers/_testimonials_container.scss */
+/* line 30, src/sass/components/containers/_testimonials_container.scss */
 .testimonials_container .testimonial__item--overlay {
   opacity: 0;
   position: absolute;
@@ -882,33 +883,33 @@ footer {
   background: linear-gradient(270deg, #fff 9.75%, rgba(255, 255, 255, 0) 100%);
 }
 
-/* line 46, src/sass/components/containers/_testimonials_container.scss */
+/* line 47, src/sass/components/containers/_testimonials_container.scss */
 .testimonials_container .testimonial__item:not(.active) .testimonial__item--overlay {
   opacity: 1;
   z-index: 5;
 }
 
-/* line 51, src/sass/components/containers/_testimonials_container.scss */
+/* line 52, src/sass/components/containers/_testimonials_container.scss */
 .testimonials_container .testimonial__item--img {
   z-index: 2;
   width: 20%;
 }
 
-/* line 54, src/sass/components/containers/_testimonials_container.scss */
+/* line 55, src/sass/components/containers/_testimonials_container.scss */
 .testimonials_container .testimonial__item--img img {
   border-radius: 50%;
   height: 90px;
   width: 90px;
 }
 
-/* line 60, src/sass/components/containers/_testimonials_container.scss */
+/* line 61, src/sass/components/containers/_testimonials_container.scss */
 .testimonials_container .testimonial__item--info {
   z-index: 3;
   width: 85%;
   margin-left: 30px;
 }
 
-/* line 64, src/sass/components/containers/_testimonials_container.scss */
+/* line 65, src/sass/components/containers/_testimonials_container.scss */
 .testimonials_container .testimonial__item--info .title {
   font-size: 18px;
   font-weight: 900;
@@ -918,7 +919,7 @@ footer {
   margin-bottom: 7px;
 }
 
-/* line 72, src/sass/components/containers/_testimonials_container.scss */
+/* line 73, src/sass/components/containers/_testimonials_container.scss */
 .testimonials_container .testimonial__item--info .summary {
   display: block;
   color: #9C69E2;
@@ -928,7 +929,7 @@ footer {
   margin-bottom: 19px;
 }
 
-/* line 80, src/sass/components/containers/_testimonials_container.scss */
+/* line 81, src/sass/components/containers/_testimonials_container.scss */
 .testimonials_container .testimonial__item--info p {
   font-size: 18px;
   line-height: 32.4px;
@@ -936,7 +937,7 @@ footer {
   color: #4B5D68;
 }
 
-/* line 89, src/sass/components/containers/_testimonials_container.scss */
+/* line 90, src/sass/components/containers/_testimonials_container.scss */
 .testimonials_container .actions {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -949,7 +950,7 @@ footer {
   padding-right: 76px;
 }
 
-/* line 95, src/sass/components/containers/_testimonials_container.scss */
+/* line 96, src/sass/components/containers/_testimonials_container.scss */
 .testimonials_container .actions .dots {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -959,7 +960,7 @@ footer {
           align-items: center;
 }
 
-/* line 98, src/sass/components/containers/_testimonials_container.scss */
+/* line 99, src/sass/components/containers/_testimonials_container.scss */
 .testimonials_container .actions .dots .dot {
   width: 5px;
   height: 5px;
@@ -968,7 +969,7 @@ footer {
   margin-right: 10px;
 }
 
-/* line 104, src/sass/components/containers/_testimonials_container.scss */
+/* line 105, src/sass/components/containers/_testimonials_container.scss */
 .testimonials_container .actions .dots .dot.active {
   width: 10px;
   height: 10px;
@@ -976,35 +977,41 @@ footer {
 }
 
 /* line 113, src/sass/components/containers/_testimonials_container.scss */
-.testimonials_container .actions .arrows .testimonial_arrow_right img {
+.testimonials_container .actions .arrows svg {
+  width: 32px;
+  fill: #fff;
+}
+
+/* line 118, src/sass/components/containers/_testimonials_container.scss */
+.testimonials_container .actions .arrows .testimonial_arrow_right svg {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
-/* line 117, src/sass/components/containers/_testimonials_container.scss */
+/* line 122, src/sass/components/containers/_testimonials_container.scss */
 .testimonials_container .actions .arrows a.disabled {
   opacity: 0.4;
 }
 
 @media screen and (max-width: 820px) {
-  /* line 125, src/sass/components/containers/_testimonials_container.scss */
+  /* line 130, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container {
     padding: 109px 0px 60px 30px;
   }
-  /* line 127, src/sass/components/containers/_testimonials_container.scss */
+  /* line 132, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container--title {
     font-size: 42px;
   }
-  /* line 131, src/sass/components/containers/_testimonials_container.scss */
+  /* line 136, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container .testimonial__item {
     padding: 30px 20px 50px;
     max-width: 400px;
   }
-  /* line 134, src/sass/components/containers/_testimonials_container.scss */
+  /* line 139, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container .testimonial__item--img {
     width: 20%;
   }
-  /* line 136, src/sass/components/containers/_testimonials_container.scss */
+  /* line 141, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container .testimonial__item--img img {
     height: 45px;
     width: 45px;
@@ -1012,43 +1019,74 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
-  /* line 147, src/sass/components/containers/_testimonials_container.scss */
+  /* line 152, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container {
     padding: 55px 0px 40px 15px;
+    position: relative;
   }
-  /* line 149, src/sass/components/containers/_testimonials_container.scss */
+  /* line 155, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container--title {
     font-size: 35px;
   }
-  /* line 153, src/sass/components/containers/_testimonials_container.scss */
+  /* line 159, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container .testimonial__item {
     padding: 30px 20px 50px;
     max-width: 321px;
   }
-  /* line 156, src/sass/components/containers/_testimonials_container.scss */
+  /* line 162, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container .testimonial__item--img {
-    width: 15%;
-  }
-  /* line 158, src/sass/components/containers/_testimonials_container.scss */
-  .testimonials_container .testimonial__item--img img {
-    height: 35px;
-    width: 35px;
-  }
-  /* line 163, src/sass/components/containers/_testimonials_container.scss */
-  .testimonials_container .testimonial__item--info {
-    width: 85%;
+    width: 25%;
+    -ms-flex-item-align: baseline;
+        align-self: baseline;
   }
   /* line 165, src/sass/components/containers/_testimonials_container.scss */
+  .testimonials_container .testimonial__item--img img {
+    width: 100%;
+    height: auto;
+  }
+  /* line 170, src/sass/components/containers/_testimonials_container.scss */
+  .testimonials_container .testimonial__item--info {
+    width: 75%;
+    position: relative;
+  }
+  /* line 173, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container .testimonial__item--info .title {
     font-size: 16px;
   }
-  /* line 168, src/sass/components/containers/_testimonials_container.scss */
+  /* line 176, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container .testimonial__item--info .summary {
     font-size: 10px;
   }
-  /* line 171, src/sass/components/containers/_testimonials_container.scss */
+  /* line 179, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container .testimonial__item--info p {
-    font-size: 12px;
+    font-size: 15px;
+  }
+  /* line 185, src/sass/components/containers/_testimonials_container.scss */
+  .testimonials_container .actions {
+    padding: 5px 0 0 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  /* line 189, src/sass/components/containers/_testimonials_container.scss */
+  .testimonials_container .actions .dots {
+    margin-bottom: 12px;
+  }
+  /* line 193, src/sass/components/containers/_testimonials_container.scss */
+  .testimonials_container .arrows {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 13px;
+    padding-right: 13px;
+  }
+  /* line 197, src/sass/components/containers/_testimonials_container.scss */
+  .testimonials_container .arrows svg {
+    width: 27px;
   }
 }
 
