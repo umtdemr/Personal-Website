@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="plugins/aos/aos.min.css" />
     <link rel="stylesheet" href="plugins/animate/animate.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
@@ -204,15 +205,15 @@
             </div>
           </div>
         </div>
-        <div class="testimonials_container">
+        <div class="testimonials_container swiper-container">
           <h2
             class="testimonials_container--title"
             data-aos-anchor-placement="top-bottom"
           >
             Hakkımda Ne Diyorlar
           </h2>
-          <div class="testimonial">
-            <div class="testimonial__item active">
+          <div class="testimonial swiper-wrapper">
+            <div class="testimonial__item swiper-slide active">
               <div class="testimonial__item--overlay"></div>
               <div class="testimonial__item--img">
                 <img src="images/avatars/avatar1.png" alt="" />
@@ -227,7 +228,7 @@
                 </p>
               </div>
             </div>
-            <div class="testimonial__item">
+            <div class="testimonial__item swiper-slide">
               <div class="testimonial__item--overlay"></div>
               <div class="testimonial__item--img">
                 <img src="images/avatars/avatar1.png" alt="" />
@@ -242,7 +243,7 @@
                 </p>
               </div>
             </div>
-            <div class="testimonial__item">
+            <div class="testimonial__item swiper-slide">
               <div class="testimonial__item--overlay"></div>
               <div class="testimonial__item--img">
                 <img src="images/avatars/avatar1.png" alt="" />
@@ -291,6 +292,11 @@
                 </svg>
               </a>
             </div>
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
         </div>
       </div>
@@ -332,10 +338,39 @@
     <script src="js/testimon.js"></script>
     <script src="js/skills.js"></script>
     <script src="plugins/aos/aos.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
       // AOS.init();
-      var test = new Testimonial();
-      test.init();
+      // var test = new Testimonial();
+      // test.init();
+      
+      var mySwiper = new Swiper ('.swiper-container', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        infinite: true,
+        initialSlide: 1,
+        speed: 500,
+        centeredSlides: true,
+        slidesPerView: 1,
+
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        // // And if we need scrollbar
+        // scrollbar: {
+        //   el: '.swiper-scrollbar',
+        // },
+      });
+
       var skills_wrapper = document.getElementById("tech_wrapper");
       var info_wrapper = document.getElementById("skills_info_wrapper")
       var skills_obj = new Skills(skills_wrapper, info_wrapper);
