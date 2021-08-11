@@ -1127,7 +1127,7 @@ footer {
 
 /* line 1, src/sass/components/containers/_about_me_container.scss */
 .about_me_container {
-  margin-top: 150px;
+  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
