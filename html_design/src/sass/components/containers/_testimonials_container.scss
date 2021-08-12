@@ -1,15 +1,16 @@
 .testimonials_container {
   background-color: $medium-purple;
-  padding: 109px 0px 60px 93px;
+  padding: 109px 46px 60px 46px;
   margin-bottom: 150px;
   border-radius: 50px;
+  overflow: visible !important;
 
   &--title {
     color: #fff;
     font-size: 52px;
     font-weight: 700;
     text-align: center;
-    margin-top: 13px;
+    // padding-top: 109px;
   }
 
   .testimonial {
@@ -55,10 +56,11 @@
       &--img {
         z-index: 2;
         width: 20%;
+        align-self: baseline;
         img {
           border-radius: 50%;
-          height: 90px;
-          width: 90px;
+          width: 100%;
+          height: auto;
         }
       }
       &--info {
@@ -92,16 +94,20 @@
   }
   .actions {
     display: flex;
-    justify-content: center;
     width: 100%;
     margin-top: 30px;
     padding: 40px 0;
+    .swiper-pagination-bullet{
+      opacity: 1;
+      margin-right: 5px;
+      background-color: #fff;
+    }
+    .swiper-pagination-bullet-active{
+      background-color: $birilliant-rose; 
+    }
     .dots {
       display: flex;
-      align-items: center;
       .dot {
-        width: 5px;
-        height: 5px;
         background-color: #fff;
         border-radius: 50%;
         margin-right: 10px;
@@ -127,11 +133,21 @@
       }
     }
   }
+  .swiper-button-next, .swiper-button-prev {
+    top: 87.4% !important;
+  }
+  .swiper-button-prev {
+    left: auto;
+    right: 70px;
+  }
+  .swiper-button-next {
+    right: 30px;
+  }
 }
 
 @media screen and (max-width: 820px) {
   .testimonials_container {
-    padding: 109px 0px 60px 30px;
+    padding: 109px 15px 60px 15px;
     &--title {
       font-size: 42px;
     }
@@ -148,6 +164,12 @@
         }
       }
     }
+    .swiper-button-prev {
+      right: 50px;
+    }
+    .swiper-button-next {
+      right: 10px;
+    }
   }
 }
 
@@ -157,6 +179,7 @@
     // position: relative;
     &--title {
       font-size: 35px;
+      // margin-top: 55px;
     }
     .testimonial {
       &__item {
@@ -187,6 +210,7 @@
     }
     .actions {
       padding: 5px 0 0 0;
+      padding-bottom: 70px;
       flex-direction: column;
       align-items: center;
       .dots {
@@ -200,6 +224,15 @@
       svg {
         width: 27px;
       }
+    }
+    .swiper-button-next, .swiper-button-prev {
+      top: 91.4% !important;
+    }
+    .swiper-button-prev {
+      left:  45%;
+    }
+    .swiper-button-next {
+      right:  43%;
     }
   }
 }
