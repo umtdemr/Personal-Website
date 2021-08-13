@@ -1043,11 +1043,15 @@ footer {
 @media screen and (max-width: 600px) {
   /* line 177, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container {
-    padding: 55px 0px 40px 15px;
+    padding: 55px 15px 40px 15px;
   }
-  /* line 180, src/sass/components/containers/_testimonials_container.scss */
+  /* line 179, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container--title {
     font-size: 35px;
+  }
+  /* line 183, src/sass/components/containers/_testimonials_container.scss */
+  .testimonials_container .testimonial {
+    padding-left: 0;
   }
   /* line 185, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container .testimonial__item {
@@ -1111,15 +1115,17 @@ footer {
   }
   /* line 228, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container .swiper-button-next, .testimonials_container .swiper-button-prev {
-    top: 91.4% !important;
+    top: 93.4% !important;
+    left: auto;
+    right: auto;
   }
-  /* line 231, src/sass/components/containers/_testimonials_container.scss */
+  /* line 233, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container .swiper-button-prev {
-    left: 45%;
+    left: 40%;
   }
-  /* line 234, src/sass/components/containers/_testimonials_container.scss */
+  /* line 236, src/sass/components/containers/_testimonials_container.scss */
   .testimonials_container .swiper-button-next {
-    right: 43%;
+    right: 40%;
   }
 }
 

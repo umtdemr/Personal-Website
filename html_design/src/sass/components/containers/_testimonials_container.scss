@@ -175,13 +175,13 @@
 
 @media screen and (max-width: 600px) {
   .testimonials_container {
-    padding: 55px 0px 40px 15px;
-    // position: relative;
+    padding: 55px 15px 40px 15px;
     &--title {
       font-size: 35px;
       // margin-top: 55px;
     }
     .testimonial {
+      padding-left: 0; 
       &__item {
         padding: 30px 20px 50px;
         // max-width: 321px;
@@ -226,13 +226,15 @@
       }
     }
     .swiper-button-next, .swiper-button-prev {
-      top: 91.4% !important;
+      top: 93.4% !important;
+      left: auto;
+      right: auto;
     }
     .swiper-button-prev {
-      left:  45%;
+      left:  40%;
     }
     .swiper-button-next {
-      right:  43%;
+      right:  40%;
     }
   }
 }
