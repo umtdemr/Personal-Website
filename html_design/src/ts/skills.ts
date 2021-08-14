@@ -100,12 +100,12 @@ class Skills{
 
   setVisible(item: HTMLLinkElement){
     const activeTarget = item.dataset["target"];
-    let activeItem = this.infoWrapper.querySelector(`[data-content="${activeTarget}"]`);
+    let nextActiveItem = this.infoWrapper.querySelector(`[data-content="${activeTarget}"]`);
     let allInfoItems = this.infoWrapper.querySelectorAll(".content");
     allInfoItems.forEach(item => {
       item.classList.remove("active");
     });
-    activeItem.classList.add("active");
+    nextActiveItem.classList.add("active");
   }
 
   addEvents(){

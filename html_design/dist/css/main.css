@@ -1266,8 +1266,8 @@ footer {
 /* line 16, src/sass/components/containers/_skills.scss */
 .skills__info--techs .tech_item {
   font-size: 18px;
-  -webkit-transition: 300ms color ease-in-out;
-  transition: 300ms color ease-in-out;
+  -webkit-transition: 100ms color ease-in-out;
+  transition: 100ms color ease-in-out;
   -webkit-transition-delay: 150ms;
           transition-delay: 150ms;
 }
@@ -1295,37 +1295,44 @@ footer {
   -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
   z-index: -1;
-  background: -webkit-gradient(linear, left top, right top, from(#777bf8), color-stop(200%, #68d4f8));
-  background: linear-gradient(90deg, #777bf8, #68d4f8 200%);
+  background: -webkit-gradient(linear, left top, right top, from(#777bf8), color-stop(200%, #9C69E2));
+  background: linear-gradient(90deg, #777bf8, #9C69E2 200%);
   border-radius: 40px;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   padding-right: 2px;
 }
 
-/* line 43, src/sass/components/containers/_skills.scss */
+/* line 44, src/sass/components/containers/_skills.scss */
 .skills__info--summary {
   -ms-flex-preferred-size: 60%;
       flex-basis: 60%;
   position: relative;
-  margin-top: 29px;
+  -webkit-box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.3);
+          box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.3);
+  padding: 25px 10px 25px 10px;
+  overflow: hidden;
 }
 
-/* line 47, src/sass/components/containers/_skills.scss */
+/* line 50, src/sass/components/containers/_skills.scss */
 .skills__info--summary .content {
   opacity: 0;
-  -webkit-transition: 300ms all;
-  transition: 300ms all;
+  -webkit-transition: 1000ms all;
+  transition: 1000ms all;
   overflow: hidden;
   position: absolute;
+  -webkit-transform: translateX(3000px);
+          transform: translateX(3000px);
 }
 
-/* line 53, src/sass/components/containers/_skills.scss */
+/* line 56, src/sass/components/containers/_skills.scss */
 .skills__info--summary .content.active {
   opacity: 1;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
 }
 
-/* line 58, src/sass/components/containers/_skills.scss */
+/* line 61, src/sass/components/containers/_skills.scss */
 .skills__info--summary .summary_title {
   font-size: 22px;
   margin-bottom: 20px;
@@ -1333,7 +1340,7 @@ footer {
   font-weight: 600;
 }
 
-/* line 64, src/sass/components/containers/_skills.scss */
+/* line 67, src/sass/components/containers/_skills.scss */
 .skills__info--summary p {
   font-size: 20px;
   line-height: 20px;
@@ -1342,34 +1349,33 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 76, src/sass/components/containers/_skills.scss */
+  /* line 79, src/sass/components/containers/_skills.scss */
   .skills__title {
     font-size: 20px;
   }
-  /* line 80, src/sass/components/containers/_skills.scss */
+  /* line 83, src/sass/components/containers/_skills.scss */
   .skills__info--techs {
     -ms-flex-preferred-size: 25%;
         flex-basis: 25%;
   }
-  /* line 82, src/sass/components/containers/_skills.scss */
+  /* line 85, src/sass/components/containers/_skills.scss */
   .skills__info--techs .tech_item {
     font-size: 13px;
   }
-  /* line 85, src/sass/components/containers/_skills.scss */
+  /* line 88, src/sass/components/containers/_skills.scss */
   .skills__info--techs .tech_selection {
     height: 53px;
   }
-  /* line 89, src/sass/components/containers/_skills.scss */
+  /* line 92, src/sass/components/containers/_skills.scss */
   .skills__info--summary {
     -ms-flex-preferred-size: 70%;
         flex-basis: 70%;
-    margin-top: 26.5px;
   }
-  /* line 92, src/sass/components/containers/_skills.scss */
+  /* line 95, src/sass/components/containers/_skills.scss */
   .skills__info--summary .summary_title {
     font-size: 16px;
   }
-  /* line 95, src/sass/components/containers/_skills.scss */
+  /* line 98, src/sass/components/containers/_skills.scss */
   .skills__info--summary p {
     font-size: 14px;
     line-height: 17px;
