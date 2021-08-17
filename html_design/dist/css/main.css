@@ -686,26 +686,10 @@ footer {
 /* line 1, src/sass/components/containers/_features_container.scss */
 .features_container {
   margin-bottom: 150px;
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
-/* line 4, src/sass/components/containers/_features_container.scss */
-.features_container h2 {
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-/* line 8, src/sass/components/containers/_features_container.scss */
-.features_container span {
-  display: block;
-  text-align: center;
-  color: #4B5D68;
-  line-height: 28px;
-  font-size: 18x;
-  margin-bottom: 70px;
-}
-
-/* line 17, src/sass/components/containers/_features_container.scss */
+/* line 6, src/sass/components/containers/_features_container.scss */
 .features_container .features {
   width: 100%;
   display: -webkit-box;
@@ -718,7 +702,7 @@ footer {
       flex-wrap: wrap;
 }
 
-/* line 22, src/sass/components/containers/_features_container.scss */
+/* line 11, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item {
   width: 35%;
   height: 358px;
@@ -738,44 +722,44 @@ footer {
   margin-bottom: 50px;
 }
 
-/* line 34, src/sass/components/containers/_features_container.scss */
+/* line 23, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item:nth-child(1) {
   background-image: url("../svg/features1.svg");
 }
 
-/* line 38, src/sass/components/containers/_features_container.scss */
+/* line 27, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item:nth-child(2) {
   background-image: url("../svg/features2.svg");
 }
 
-/* line 41, src/sass/components/containers/_features_container.scss */
+/* line 30, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item:nth-child(3) {
   background-image: url("../svg/features3.svg");
 }
 
-/* line 44, src/sass/components/containers/_features_container.scss */
+/* line 33, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item:nth-child(4) {
   background-image: url("../svg/features4.svg");
 }
 
-/* line 47, src/sass/components/containers/_features_container.scss */
+/* line 36, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item:nth-child(odd) {
   margin-right: 83px;
 }
 
-/* line 51, src/sass/components/containers/_features_container.scss */
+/* line 40, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item img {
   position: absolute;
   width: 35%;
   left: -16%;
 }
 
-/* line 56, src/sass/components/containers/_features_container.scss */
+/* line 45, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item--info {
   margin-left: 20%;
 }
 
-/* line 58, src/sass/components/containers/_features_container.scss */
+/* line 47, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item--info h3 {
   font-size: 24px;
   color: #212353;
@@ -784,7 +768,7 @@ footer {
   left: 20%;
 }
 
-/* line 65, src/sass/components/containers/_features_container.scss */
+/* line 54, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item--info p {
   font-size: 16px;
   line-height: 25px;
@@ -792,11 +776,11 @@ footer {
 }
 
 @media screen and (max-width: 820px) {
-  /* line 80, src/sass/components/containers/_features_container.scss */
+  /* line 69, src/sass/components/containers/_features_container.scss */
   .features_container .features .feature__item {
     width: 70%;
   }
-  /* line 82, src/sass/components/containers/_features_container.scss */
+  /* line 71, src/sass/components/containers/_features_container.scss */
   .features_container .features .feature__item:nth-child(odd) {
     margin-right: 0px;
   }
@@ -1189,32 +1173,33 @@ footer {
 
 /* line 10, src/sass/components/containers/_about_me_container.scss */
 .about_me_container p {
+  margin-top: 14px;
   color: #4B5D68;
   line-height: 26px;
   font-size: 18px;
 }
 
-/* line 15, src/sass/components/containers/_about_me_container.scss */
+/* line 16, src/sass/components/containers/_about_me_container.scss */
 .about_me_container .about_me__info {
   -ms-flex-preferred-size: 60%;
       flex-basis: 60%;
 }
 
-/* line 18, src/sass/components/containers/_about_me_container.scss */
+/* line 19, src/sass/components/containers/_about_me_container.scss */
 .about_me_container .about_me__img {
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
 }
 
-/* line 20, src/sass/components/containers/_about_me_container.scss */
+/* line 21, src/sass/components/containers/_about_me_container.scss */
 .about_me_container .about_me__img img {
-  width: 50%;
+  width: 100%;
   display: block;
   margin: 30px auto;
 }
 
 @media screen and (min-width: 768px) {
-  /* line 29, src/sass/components/containers/_about_me_container.scss */
+  /* line 30, src/sass/components/containers/_about_me_container.scss */
   .about_me_container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -1222,6 +1207,10 @@ footer {
             flex-direction: row;
   }
   /* line 32, src/sass/components/containers/_about_me_container.scss */
+  .about_me_container p {
+    font-size: 16px;
+  }
+  /* line 36, src/sass/components/containers/_about_me_container.scss */
   .about_me_container .about_me__img img {
     width: 100%;
   }
@@ -1229,16 +1218,17 @@ footer {
 
 /* line 1, src/sass/components/containers/_skills.scss */
 .skills {
-  margin-top: 50px;
+  margin-top: 70px;
+  margin-bottom: 150px;
   width: 100%;
 }
 
-/* line 4, src/sass/components/containers/_skills.scss */
+/* line 5, src/sass/components/containers/_skills.scss */
 .skills__title {
   font-size: 27px;
 }
 
-/* line 7, src/sass/components/containers/_skills.scss */
+/* line 8, src/sass/components/containers/_skills.scss */
 .skills__info {
   margin-top: 20px;
   display: -webkit-box;
@@ -1249,7 +1239,7 @@ footer {
           justify-content: space-between;
 }
 
-/* line 11, src/sass/components/containers/_skills.scss */
+/* line 12, src/sass/components/containers/_skills.scss */
 .skills__info--techs {
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
@@ -1263,7 +1253,7 @@ footer {
   position: relative;
 }
 
-/* line 16, src/sass/components/containers/_skills.scss */
+/* line 17, src/sass/components/containers/_skills.scss */
 .skills__info--techs .tech_item {
   font-size: 18px;
   -webkit-transition: 100ms color ease-in-out;
@@ -1272,18 +1262,18 @@ footer {
           transition-delay: 150ms;
 }
 
-/* line 18, src/sass/components/containers/_skills.scss */
+/* line 19, src/sass/components/containers/_skills.scss */
 .skills__info--techs .tech_item span {
   padding: 20px 5px;
   display: inline-block;
 }
 
-/* line 24, src/sass/components/containers/_skills.scss */
+/* line 25, src/sass/components/containers/_skills.scss */
 .skills__info--techs .tech_item.active {
   color: #fff;
 }
 
-/* line 28, src/sass/components/containers/_skills.scss */
+/* line 29, src/sass/components/containers/_skills.scss */
 .skills__info--techs .tech_selection {
   position: absolute;
   width: 100%;
@@ -1303,36 +1293,30 @@ footer {
   padding-right: 2px;
 }
 
-/* line 44, src/sass/components/containers/_skills.scss */
+/* line 45, src/sass/components/containers/_skills.scss */
 .skills__info--summary {
   -ms-flex-preferred-size: 60%;
       flex-basis: 60%;
   position: relative;
-  -webkit-box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.3);
-          box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.3);
   padding: 25px 10px 25px 10px;
   overflow: hidden;
 }
 
-/* line 50, src/sass/components/containers/_skills.scss */
+/* line 51, src/sass/components/containers/_skills.scss */
 .skills__info--summary .content {
   opacity: 0;
   -webkit-transition: 1000ms all;
   transition: 1000ms all;
   overflow: hidden;
   position: absolute;
-  -webkit-transform: translateX(3000px);
-          transform: translateX(3000px);
 }
 
-/* line 56, src/sass/components/containers/_skills.scss */
+/* line 57, src/sass/components/containers/_skills.scss */
 .skills__info--summary .content.active {
   opacity: 1;
-  -webkit-transform: translateX(0px);
-          transform: translateX(0px);
 }
 
-/* line 61, src/sass/components/containers/_skills.scss */
+/* line 62, src/sass/components/containers/_skills.scss */
 .skills__info--summary .summary_title {
   font-size: 22px;
   margin-bottom: 20px;
@@ -1340,7 +1324,7 @@ footer {
   font-weight: 600;
 }
 
-/* line 67, src/sass/components/containers/_skills.scss */
+/* line 68, src/sass/components/containers/_skills.scss */
 .skills__info--summary p {
   font-size: 20px;
   line-height: 20px;
@@ -1349,33 +1333,33 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 79, src/sass/components/containers/_skills.scss */
+  /* line 80, src/sass/components/containers/_skills.scss */
   .skills__title {
     font-size: 20px;
   }
-  /* line 83, src/sass/components/containers/_skills.scss */
+  /* line 84, src/sass/components/containers/_skills.scss */
   .skills__info--techs {
     -ms-flex-preferred-size: 25%;
         flex-basis: 25%;
   }
-  /* line 85, src/sass/components/containers/_skills.scss */
+  /* line 86, src/sass/components/containers/_skills.scss */
   .skills__info--techs .tech_item {
     font-size: 13px;
   }
-  /* line 88, src/sass/components/containers/_skills.scss */
+  /* line 89, src/sass/components/containers/_skills.scss */
   .skills__info--techs .tech_selection {
     height: 53px;
   }
-  /* line 92, src/sass/components/containers/_skills.scss */
+  /* line 93, src/sass/components/containers/_skills.scss */
   .skills__info--summary {
     -ms-flex-preferred-size: 70%;
         flex-basis: 70%;
   }
-  /* line 95, src/sass/components/containers/_skills.scss */
+  /* line 96, src/sass/components/containers/_skills.scss */
   .skills__info--summary .summary_title {
     font-size: 16px;
   }
-  /* line 98, src/sass/components/containers/_skills.scss */
+  /* line 99, src/sass/components/containers/_skills.scss */
   .skills__info--summary p {
     font-size: 14px;
     line-height: 17px;
@@ -1761,4 +1745,20 @@ input:focus, textarea:focus, select:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+/* line 2, src/sass/components/_title_w_span.scss */
+.title_w_sum h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* line 6, src/sass/components/_title_w_span.scss */
+.title_w_sum span {
+  display: block;
+  text-align: center;
+  color: #4B5D68;
+  line-height: 28px;
+  font-size: 18x;
+  margin-bottom: 40px;
 }

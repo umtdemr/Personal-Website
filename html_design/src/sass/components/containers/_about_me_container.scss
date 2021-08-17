@@ -8,6 +8,7 @@
         font-size: 45px;
     }
     p{
+        margin-top: 14px;
         color: $river-bed;
         line-height: 26px;
         font-size: 18px;
@@ -18,7 +19,7 @@
   .about_me__img{
     flex-basis: 30%;
     img{
-      width: 50%;
+      width: 100%;
       display: block;
       margin: 30px auto;
     }
@@ -28,6 +29,9 @@
 @media screen and (min-width: 768px) {
  .about_me_container{
    flex-direction: row;
+   p{
+     font-size: 16px;
+   }
    .about_me__img {
      img{
        width: 100%;
