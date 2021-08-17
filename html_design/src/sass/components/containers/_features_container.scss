@@ -28,9 +28,11 @@
                 background-image: url('../svg/features2.svg');
             }
             &:nth-child(3){
+                opacity: .6;
                 background-image: url('../svg/features3.svg');
             }
             &:nth-child(4){
+                opacity: .6;
                 background-image: url('../svg/features4.svg');
             }
             &:nth-child(odd){

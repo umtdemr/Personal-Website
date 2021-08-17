@@ -734,32 +734,34 @@ footer {
 
 /* line 30, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item:nth-child(3) {
+  opacity: .6;
   background-image: url("../svg/features3.svg");
 }
 
-/* line 33, src/sass/components/containers/_features_container.scss */
+/* line 34, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item:nth-child(4) {
+  opacity: .6;
   background-image: url("../svg/features4.svg");
 }
 
-/* line 36, src/sass/components/containers/_features_container.scss */
+/* line 38, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item:nth-child(odd) {
   margin-right: 83px;
 }
 
-/* line 40, src/sass/components/containers/_features_container.scss */
+/* line 42, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item img {
   position: absolute;
   width: 35%;
   left: -16%;
 }
 
-/* line 45, src/sass/components/containers/_features_container.scss */
+/* line 47, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item--info {
   margin-left: 20%;
 }
 
-/* line 47, src/sass/components/containers/_features_container.scss */
+/* line 49, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item--info h3 {
   font-size: 24px;
   color: #212353;
@@ -768,7 +770,7 @@ footer {
   left: 20%;
 }
 
-/* line 54, src/sass/components/containers/_features_container.scss */
+/* line 56, src/sass/components/containers/_features_container.scss */
 .features_container .features .feature__item--info p {
   font-size: 16px;
   line-height: 25px;
@@ -776,11 +778,11 @@ footer {
 }
 
 @media screen and (max-width: 820px) {
-  /* line 69, src/sass/components/containers/_features_container.scss */
+  /* line 71, src/sass/components/containers/_features_container.scss */
   .features_container .features .feature__item {
     width: 70%;
   }
-  /* line 71, src/sass/components/containers/_features_container.scss */
+  /* line 73, src/sass/components/containers/_features_container.scss */
   .features_container .features .feature__item:nth-child(odd) {
     margin-right: 0px;
   }
