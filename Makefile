@@ -1,5 +1,5 @@
 push_git:
-	@echo "Creating requirements.txt"
+	@echo "Pushing..."
 	git add .
 	git commit -m "$(c)"
 	git push
