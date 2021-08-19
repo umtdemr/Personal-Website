@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Script from "next/script"
 import Head from "next/head";
 import Image from "next/image"
 
@@ -8,13 +9,11 @@ const About: NextPage = () => {
         <div className="container">
             <Head>
                 <title>Hakkımda - Ümit Demir</title>
-                <script async src="/js/skills.js"></script>
-                <script async src="/plugins/swiper/js/swiper-bundle.min.js"></script>
                 <link rel="stylesheet" href="/plugins/swiper/css/swiper-bundle.min.css" />
-                {/* <script async defer src="/js/run.js"></script> */}
-                {/* <script async src="/js/run.js"> <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-                </script> */}
+                <script async src="/js/skills.js"></script>
             </Head>
+            <Script src="/plugins/swiper/js/swiper-bundle.min.js"  strategy="beforeInteractive"/>
+            <Script src="/js/run.js" strategy="lazyOnload"/>
             <div className="about_me_container">
                 <div className="about_me__info">
                     <h2>About Me</h2>
