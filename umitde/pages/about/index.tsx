@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Script from "next/script";
-
+import Image from "next/image"
 
 
 const About: NextPage = () => {
@@ -12,6 +11,7 @@ const About: NextPage = () => {
                 <script async src="/js/skills.js"></script>
                 <script async src="/plugins/swiper/js/swiper-bundle.min.js"></script>
                 <link rel="stylesheet" href="/plugins/swiper/css/swiper-bundle.min.css" />
+                {/* <script async defer src="/js/run.js"></script> */}
                 {/* <script async src="/js/run.js"> <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
                 </script> */}
             </Head>
@@ -110,7 +110,8 @@ const About: NextPage = () => {
                 </div>
                 <div className="features">
                     <div className="feature__item">
-                        <img src="svg/features/backend.svg" alt="" />
+                        <Image src="/svg/features/backend.svg" alt="qwewqe" layout="fill"/>
+                        <img src="/svg/features/backend.svg" alt="" />
                         <div className="feature__item--info">
                             <h3>Backend</h3>
                             <p>
