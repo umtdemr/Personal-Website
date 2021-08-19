@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 
 
@@ -9,7 +10,9 @@ const Footer: React.FC = () => {
             <div className="container">
                 <div className="footer_container">
                     <div className="footer_left">
-                        <a href="/" className="footer_logo logo">umitde<span className="logo--faded">mir</span></a>
+                        <Link href="/" passHref>
+                            <a className="footer_logo logo">umitde<span className="logo--faded">mir</span></a>
+                        </Link>
                     </div>
                     <div className="footer_right">
                         <div className="socials">
