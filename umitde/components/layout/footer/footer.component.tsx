@@ -4,8 +4,8 @@ import React from 'react'
 const Footer: React.FC = () => {
     return (
         <>
-        <div className="full_divider"></div>
         <footer>
+            <div className="full_divider"></div>
             <div className="container">
                 <div className="footer_container">
                     <div className="footer_left">

@@ -17,6 +17,7 @@ export default function Layout({ children}:  LayoutProps) {
     <>
       <Head>
         <title>Ümit Demir</title>
+        <script async src="/js/main.js"></script>
       </Head> 
       <MobileHeader />
       <div className="content">
