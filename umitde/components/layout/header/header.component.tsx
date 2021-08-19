@@ -1,5 +1,7 @@
 import React from "react"
 
+import Link from "next/link";
+
 
 const Header: React.FC = () => {
     return (
@@ -7,21 +9,28 @@ const Header: React.FC = () => {
             <div className="container">
                 <div className="header">
                     <div className="header--top">
-                    <a href="#" className="logo text">umitde<span className="logo--faded">mir</span></a>
+                        <Link href="/" passHref>
+                            <a className="logo text">umitde<span className="logo--faded">mir</span></a>
+                        </Link>
                     <div className="header_last">
                         <ul className="header--top--menu">
-                        <li className="active"><a href="#">Blog</a></li>
-                        <li><a href="#">Hakkımda</a></li>
+                            <li className="active"><a href="#">Blog</a></li>
+                            <li>
+                                <Link href="/about">Hakkımda</Link>
+                            </li>
                         </ul>
+                        <Link href="/contact" passHref>
+
                         <button
                         className="
-                            white_button
-                            with_arrow
-                            animate__animated animate__fadeInRight
+                        white_button
+                        with_arrow
+                        animate__animated animate__fadeInRight
                         "
                         >
                         İletişime geç <i className="fas fa-arrow-right"></i>
                         </button>
+                            </Link>
                     </div>
                     <a href="#" className="header_toggler">
                         <span></span>
