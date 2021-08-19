@@ -9,7 +9,9 @@ body, html{
     flex: 1 0 auto;
 }
 
-
+.testimonial__item {
+    position: relative;
+}
 footer {
     margin-top: 30px;
     transition: .5s all;
