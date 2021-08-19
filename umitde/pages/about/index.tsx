@@ -10,9 +10,9 @@ const About: NextPage = () => {
             <Head>
                 <title>Hakkımda - Ümit Demir</title>
                 <link rel="stylesheet" href="/plugins/swiper/css/swiper-bundle.min.css" />
-                <script async src="/js/skills.js"></script>
             </Head>
             <Script src="/plugins/swiper/js/swiper-bundle.min.js"  strategy="beforeInteractive"/>
+            <Script src="/js/skills.js" strategy="beforeInteractive"/>
             <Script src="/js/run.js" strategy="lazyOnload"/>
             <div className="about_me_container">
                 <div className="about_me__info">
