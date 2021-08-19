@@ -10,7 +10,7 @@ const About: NextPage = () => {
             <Head>
                 <title>Hakkımda - Ümit Demir</title>
                 <script async src="/js/skills.js"></script>
-                <script async src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                <script async src="/plugins/swiper/js/swiper-bundle.min.js"></script>
                 <link rel="stylesheet" href="/plugins/swiper/css/swiper-bundle.min.css" />
                 {/* <script async src="/js/run.js"> <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
                 </script> */}
