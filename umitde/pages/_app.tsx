@@ -1,7 +1,7 @@
-import '../styles/globals.css'
+import '../public/css/main.min.css'
+import '../public/plugins/fontawesome/css/all.min.css'
 import type { AppProps } from 'next/app'
-import Layout from '../components/layout'
-
+import Layout from '../components/layout/layout'
 
 
 
