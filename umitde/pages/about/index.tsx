@@ -30,7 +30,8 @@ const About: NextPage = () => {
                     </p>
                 </div>
                 <div className="about_me__img">
-                    <img src="https://avatars.githubusercontent.com/u/61540809?v=4" alt="" />
+                    <Image src="/images/me.jpg" alt="Ümit Demir" width={460} height={460} />
+                    {/* <img src="https://avatars.githubusercontent.com/u/61540809?v=4" alt="" /> */}
                 </div>
             </div>
             <div className="skills">
@@ -109,8 +110,7 @@ const About: NextPage = () => {
                 </div>
                 <div className="features">
                     <div className="feature__item">
-                        <Image src="/svg/features/backend.svg" alt="qwewqe" layout="fill"/>
-                        <img src="/svg/features/backend.svg" alt="" />
+                        <img src="svg/features/backend.svg" alt="Backend" />
                         <div className="feature__item--info">
                             <h3>Backend</h3>
                             <p>
@@ -119,7 +119,7 @@ const About: NextPage = () => {
                         </div>
                     </div>
                     <div className="feature__item">
-                        <img src="svg/features/frontend.svg" alt="" />
+                        <img src="svg/features/frontend.svg" alt="Frontend" />
                         <div className="feature__item--info">
                             <h3>Frontend</h3>
                             <p>
@@ -130,7 +130,7 @@ const About: NextPage = () => {
                         </div>
                     </div>
                     <div className="feature__item">
-                        <img src="svg/features/mobile.svg" alt="" />
+                        <img src="svg/features/mobile.svg" alt="Mobile" />
                         <div className="feature__item--info">
                             <h3>Mobile Apps</h3>
                             <p>
@@ -140,7 +140,7 @@ const About: NextPage = () => {
                         </div>
                     </div>
                     <div className="feature__item">
-                        <img src="svg/features/devops.svg" alt="" />
+                        <img src="svg/features/devops.svg" alt="Devops" />
                         <div className="feature__item--info">
                             <h3>Devops</h3>
                             <p>
@@ -152,65 +152,76 @@ const About: NextPage = () => {
                     </div>
                 </div>
             </div>
-        <div className="testimonials_container swiper-container">
-            <h2 className="testimonials_container--title" data-aos-anchor-placement="top-bottom">
-            Hakkımda Ne Diyorlar
-            </h2>
-            <div className="testimonial swiper-wrapper">
-            <div className="testimonial__item swiper-slide active">
-                <div className="testimonial__item--overlay" />
-                <div className="testimonial__item--img">
-                <img src="images/avatars/avatar1.png" alt="" />
+            <div className="testimonials_container swiper-container">
+                <h2 className="testimonials_container--title" data-aos-anchor-placement="top-bottom">
+                Hakkımda Ne Diyorlar
+                </h2>
+                <div className="testimonial swiper-wrapper">
+                    <div className="testimonial__item swiper-slide active">
+                        <div className="testimonial__item--overlay" />
+                        <div className="testimonial__item--img">
+                            <Image src="/images/testimonial/hikmet-anil-oztekin.jpg"
+                                width="400"
+                                height="400"
+                                alt="Hikmet anıl öztekin"
+                            />
+                        </div>
+                        <div className="testimonial__item--info">
+                            <h3 className="title">Hikmet Anıl Öztekin</h3>
+                            <span className="summary">Yazar</span>
+                            <p>
+                                Ümit, ajansımızda bir yıl stajyer olarak çalışmıştı.
+                                Ajansımıza ilk geldiği andaki bilgisi ile bir yıl sonraki bilgisi arasında çok fark vardı.
+                                Kendisini çok geliştirmişti. Öğrendiğime göre geliştirmeye de devam ediyor.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="testimonial__item swiper-slide">
+                        <div className="testimonial__item--overlay" />
+                        <div className="testimonial__item--img">
+                            <Image src="/images/avatars/avatar1.png"
+                                width="400"
+                                height="400"
+                                alt="İlkim Erbudak"
+                            />
+                        </div>
+                        <div className="testimonial__item--info">
+                            <h3 className="title">İlkim Erbudak</h3>
+                            <span className="summary">Head Of Digital Marketing</span>
+                            <p>
+                                Ümitle yaklaşık 4 yıllık bir tanışıklığımız var.
+                                Kendisine verilen işleri sorumluluk alarak hızlıca bitirebilme yeteneğine sahip birisidir.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="testimonial__item swiper-slide">
+                        <div className="testimonial__item--overlay" />
+                        <div className="testimonial__item--img">
+                            <Image src="/images/avatars/avatar2.png"
+                                width="400"
+                                height="400"
+                                alt="Şehriban Ürün"
+                            />
+                        </div>
+                        <div className="testimonial__item--info">
+                            <h3 className="title">Şehriban Ürün</h3>
+                            <span className="summary">Digital Marketing Consultant</span>
+                            <p>
+                                Ümitle freelance olarak çalışmıştık.
+                                Kendi markamız olan <a href="https://hierapi.com">hierapi.com</a> e ticaret sitesi görevini vermiştik.
+                                
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div className="testimonial__item--info">
-                <h3 className="title">John Fang</h3>
-                <span className="summary">UI/UIX Designer</span>
-                <p>
-                    Suspendisse ultrices at diam lectus nullam. Nisl, sagittis
-                    viverra enim erat tortor ultricies massa turpis. Arcu pulvinar
-                    aenean nam laoreet nulla.
-                </p>
+                <div className="actions">
+                    <div className="swiper-pagination swiper-button-white" />
                 </div>
+                {/* If we need navigation buttons */}
+                <div className="swiper-button-prev swiper-button-white" />
+                <div className="swiper-button-next swiper-button-white" />
             </div>
-            <div className="testimonial__item swiper-slide">
-                <div className="testimonial__item--overlay" />
-                <div className="testimonial__item--img">
-                <img src="images/avatars/avatar1.png" alt="" />
-                </div>
-                <div className="testimonial__item--info">
-                <h3 className="title">John Fang</h3>
-                <span className="summary">UI/UIX Designer</span>
-                <p>
-                    Suspendisse ultrices at diam lectus nullam. Nisl, sagittis
-                    viverra enim erat tortor ultricies massa turpis. Arcu pulvinar
-                    aenean nam laoreet nulla.
-                </p>
-                </div>
-            </div>
-            <div className="testimonial__item swiper-slide">
-                <div className="testimonial__item--overlay" />
-                <div className="testimonial__item--img">
-                    <img src="images/avatars/avatar1.png" alt="" />
-                </div>
-                <div className="testimonial__item--info">
-                    <h3 className="title">John Fang</h3>
-                    <span className="summary">UI/UIX Designer</span>
-                    <p>
-                        Suspendisse ultrices at diam lectus nullam. Nisl, sagittis
-                        viverra enim erat tortor ultricies massa turpis. Arcu pulvinar
-                        aenean nam laoreet nulla.
-                    </p>
-                </div>
-            </div>
-            </div>
-            <div className="actions">
-                <div className="swiper-pagination swiper-button-white" />
-            </div>
-            {/* If we need navigation buttons */}
-            <div className="swiper-button-prev swiper-button-white" />
-            <div className="swiper-button-next swiper-button-white" />
         </div>
-    </div>
 
     )
 }

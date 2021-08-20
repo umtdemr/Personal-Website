@@ -1,4 +1,4 @@
-
+setTimeout(() => {
   var SwiperConf = new Swiper ('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',
@@ -16,11 +16,11 @@
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-
+    
     keyboard: {
       enabled: true,
     },
-
+    
     breakpoints: {
       370: {
         slidesPerView: 1,
@@ -42,8 +42,10 @@
       }
     }
   });
-
+  
   var skills_wrapper = document.getElementById("tech_wrapper");
   var info_wrapper = document.getElementById("skills_info_wrapper")
   var skills_obj = new Skills(skills_wrapper, info_wrapper);
   skills_obj.print();
+  console.log("work") 
+}, 100);
