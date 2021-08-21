@@ -1,6 +1,12 @@
 import type { NextPage } from "next";
+import React, { useState } from 'react'
+
 
 const Contact: NextPage = () => {
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+    const [message, setMessage] = useState('');
+
     return (
         <>
         <div className="gradient_bg"></div>
@@ -20,15 +26,30 @@ const Contact: NextPage = () => {
                   <fieldset>
                     <div className="form_group">
                       <label htmlFor="name">Ad</label>
-                      <input type="text" id="name" name="name" placeholder="Jane" className="invalid" required />
+                      <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        placeholder="Jane"
+                        className="invalid"
+                        required />
                     </div>
                     <div className="form_group has-focus">
                       <label htmlFor="email">E-Posta</label>
-                      <input type="email" id="email" name="email" placeholder="jane.doe@gmail.com" required />
+                      <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="jane.doe@gmail.com"
+                        required />
                     </div>
                     <div className="form_group">
                       <label htmlFor="message">Mesaj</label>
-                      <textarea name="message" id="message" placeholder="Selam Ümit, ... hakkında yazıyorum..." required></textarea>
+                      <textarea 
+                        name="message"
+                        id="message"
+                        placeholder="Selam Ümit, ... hakkında yazıyorum..." 
+                        required></textarea>
                     </div>
                   </fieldset>
                   <button className="contact_send">Gönder</button>
