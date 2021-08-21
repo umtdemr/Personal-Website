@@ -1,11 +1,42 @@
 import type { NextPage } from "next";
-import React, { useState } from 'react'
+import React, { ChangeEvent, useRef, useState, useEffect } from 'react'
 
 
 const Contact: NextPage = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
+
+    const nameEl = useRef<HTMLInputElement>(null);
+    
+    const handleName = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      let val = e.target.value;
+      handleChange(val, setName);
+      
+      if (val.length < 2 || val.length > 20) {
+        nameEl.current!.classList.add("invalid");
+      }else {
+        nameEl.current!.classList.remove("invalid");
+      }
+    }
+
+    const handleChange = (
+        value: string,        
+        setVal: any,
+      ) => {
+        console.log(value);
+      setVal(value);
+    }
+
+    useEffect(() => {
+      const parent = nameEl.current!.parentElement!;
+      nameEl.current!.addEventListener('focus', () => {
+        parent.classList.add("has-focus");
+      });
+      nameEl.current!.addEventListener('blur', () => {
+        parent.classList.remove("has-focus");
+      });
+    }, [])
 
     return (
         <>
@@ -31,7 +62,9 @@ const Contact: NextPage = () => {
                         id="name" 
                         name="name" 
                         placeholder="Jane"
-                        className="invalid"
+                        value={name} 
+                        onChange={(e) => handleName(e)}
+                        ref={nameEl}
                         required />
                     </div>
                     <div className="form_group has-focus">
