@@ -1,42 +1,91 @@
 import type { NextPage } from "next";
-import React, { ChangeEvent, useRef, useState, useEffect } from 'react'
+import React, { ChangeEvent, useRef, useState, useEffect, FormEvent } from 'react'
 
 
 const Contact: NextPage = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
+    const [isValidAll, setIsValidAll] = useState<[boolean, boolean, boolean]>([false, false, false]);
+    const [isValid, setIsValid] = useState(false);
+
+    enum ValidInputs {
+      NAME = 0,
+      EMAIL = 1,
+      MESSAGE = 2,
+    }
+
 
     const nameEl = useRef<HTMLInputElement>(null);
+    const emailEl = useRef<HTMLInputElement>(null);
+    const messageEl = useRef<HTMLTextAreaElement>(null);
     
-    const handleName = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleName = (e: ChangeEvent<HTMLInputElement>) => {
       let val = e.target.value;
-      handleChange(val, setName);
-      
-      if (val.length < 2 || val.length > 20) {
-        nameEl.current!.classList.add("invalid");
-      }else {
-        nameEl.current!.classList.remove("invalid");
-      }
+      val = val.trimLeft();
+      const re = /^([a-zA-Z\sğüşöçıİĞÜŞÖÇ]{2,})$/g
+      handleChange(val, setName, re, nameEl.current!, ValidInputs.NAME);
+    }
+
+    const handleMail = (e: ChangeEvent<HTMLInputElement>) => {
+      let val = e.target.value;
+      val = val.trimLeft();
+      const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+      handleChange(val, setEmail, re, emailEl.current!, ValidInputs.EMAIL);
+    }
+
+    const handleMessage = (e: ChangeEvent<HTMLTextAreaElement>) => {
+      let val = e.target.value;
+      val = val.trimLeft();
+      const re = /^([a-zA-Z\*\.,\+\sğüşöçıİĞÜŞÖÇ@_:]{10,})$/
+      handleChange(val, setMessage, re, messageEl.current!, ValidInputs.MESSAGE);
+
     }
 
     const handleChange = (
         value: string,        
         setVal: any,
+        re: RegExp,
+        inputOrTextarea: HTMLInputElement | HTMLTextAreaElement,
+        type: ValidInputs
       ) => {
-        console.log(value);
-      setVal(value);
+        setVal(value);
+        let oldValid = [...isValidAll] as [boolean, boolean, boolean];
+        if (re.test(value)) {
+          inputOrTextarea.classList.remove("invalid");
+          oldValid[type] = true;
+        } else {
+          inputOrTextarea.classList.add("invalid");
+          oldValid[type] = false;
+        }
+        setIsValidAll(oldValid);
     }
 
     useEffect(() => {
-      const parent = nameEl.current!.parentElement!;
-      nameEl.current!.addEventListener('focus', () => {
-        parent.classList.add("has-focus");
-      });
-      nameEl.current!.addEventListener('blur', () => {
-        parent.classList.remove("has-focus");
-      });
-    }, [])
+      const listOfEls: (HTMLInputElement | HTMLTextAreaElement)[] = [
+        nameEl.current!,
+        emailEl.current!,
+        messageEl.current!
+      ]
+      listOfEls.forEach(elItem => {
+        const parent = elItem.parentElement!;
+        elItem.addEventListener('focus', () => {
+          parent.classList.add("has-focus");
+        });
+        elItem.addEventListener('blur', () => {
+          parent.classList.remove("has-focus");
+        });
+      })
+    }, []);
+
+    useEffect(() => {
+      setIsValid(isValidAll.every(item => item));
+    }, [isValidAll]);
+
+    const sendMessage = (e: FormEvent) => {
+      e.preventDefault();
+      console.log("mesaj gönder");
+    }
 
     return (
         <>
@@ -53,7 +102,7 @@ const Contact: NextPage = () => {
           <section className="contact_form_section">
             <div className="form_column">
               <div className="form_container">
-                <form action="" method="post">
+                <form action="" method="post" onSubmit={(e) => sendMessage(e)}>
                   <fieldset>
                     <div className="form_group">
                       <label htmlFor="name">Ad</label>
@@ -67,13 +116,15 @@ const Contact: NextPage = () => {
                         ref={nameEl}
                         required />
                     </div>
-                    <div className="form_group has-focus">
+                    <div className="form_group">
                       <label htmlFor="email">E-Posta</label>
                       <input 
                         type="email" 
                         id="email" 
                         name="email" 
                         placeholder="jane.doe@gmail.com"
+                        onChange={(e) => handleMail(e)}
+                        ref={emailEl}
                         required />
                     </div>
                     <div className="form_group">
@@ -82,10 +133,15 @@ const Contact: NextPage = () => {
                         name="message"
                         id="message"
                         placeholder="Selam Ümit, ... hakkında yazıyorum..." 
+                        onChange={(e) => handleMessage(e)}
+                        ref={messageEl}
                         required></textarea>
                     </div>
                   </fieldset>
-                  <button className="contact_send">Gönder</button>
+                  <button 
+                    className="contact_send"
+                    disabled={!isValid && true}
+                    >Gönder</button>
                 </form>
               </div>
             </div>

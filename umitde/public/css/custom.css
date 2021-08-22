@@ -21,4 +21,9 @@ footer {
 
 footer .full_divider {
     margin-bottom: 100px;
+
+}
+
+.contact_page textarea {
+  resize: none;
 }
