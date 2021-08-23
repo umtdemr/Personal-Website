@@ -138,6 +138,12 @@ const Contact: NextPage = () => {
                         required></textarea>
                     </div>
                   </fieldset>
+                  <div className="error_messages">
+                    { !isValidAll[0] && <span>
+                      * İsim 2 karakterden uzun olmalı <br />
+                      * İsim özel karakterler içermemeli <br />
+                    </span> }
+                  </div>
                   <button 
                     className="contact_send"
                     disabled={!isValid && true}
