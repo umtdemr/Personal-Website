@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import React, { ChangeEvent, useRef, useState, useEffect, FormEvent } from 'react'
 
-import { ValidType, ValidInputs } from "./contact.types";
+import { ValidType, ValidInputs, MailData } from "./contact.types";
 
 
 const Contact: NextPage = () => {
@@ -90,6 +90,23 @@ const Contact: NextPage = () => {
     const sendMessage = (e: FormEvent) => {
       e.preventDefault();
       console.log("mesaj gönder");
+      let data: MailData = {
+        name,
+        message,
+        email,
+      }
+      fetch('/api/contact/', {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+        .then(res => {
+          console.log(res);
+        });
+
     }
 
     return (

@@ -9,3 +9,10 @@ export enum ValidInputs {
     EMAIL = 1,
     MESSAGE = 2,
 }
+
+
+export interface MailData {
+    name: string;
+    email: string;
+    message: string;
+}
