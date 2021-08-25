@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import React, { ChangeEvent, useRef, useState, useEffect, FormEvent } from 'react'
 
-import { ValidType, ValidInputs, MailData } from "./contact.types";
+import { ValidType, ValidInputs, MailData } from "../../types/contact.types";
 
 
 const Contact: NextPage = () => {
