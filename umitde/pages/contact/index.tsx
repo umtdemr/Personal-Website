@@ -41,7 +41,7 @@ const Contact: NextPage = () => {
     const handleMessage = (e: ChangeEvent<HTMLTextAreaElement>) => {
       let val = e.target.value;
       val = val.trimLeft();
-      const re = /^([a-zA-Z\*\.,\+\sğüşöçıİĞÜŞÖÇ@_:]{10,})$/
+      const re = /^([a-zA-Z\*\.,\+\sğüşöçıİĞÜŞÖÇ\?\()-@_:]{10,})$/
       handleChange(val, setMessage, re, messageEl.current!, ValidInputs.MESSAGE);
 
     }
@@ -143,35 +143,6 @@ const Contact: NextPage = () => {
                         required></textarea>
                     </div>
                   </fieldset>
-                  <div className="error_messages">
-                    { !isValidAll[0].isValid && isValidAll[0].isTyped && (
-                      <div className="error_msg_item">
-                        <span className="title_error_msg">İsim:</span>
-                        <ul className="content">
-                          <li>2 karakterden uzun olmaı</li>
-                          <li>özel karakterler içermemeli</li>
-                        </ul>
-                      </div>
-                    )}
-                    { !isValidAll[1].isValid && isValidAll[1].isTyped && (
-                      <div className="error_msg_item">
-                        <span className="title_error_msg">E-Posta:</span>
-                        <ul className="content">
-                          <li>2 karakterden uzun olmaı</li>
-                          <li>özel karakterler içermemeli</li>
-                        </ul>
-                      </div>
-                    )}
-                    { !isValidAll[2].isValid && isValidAll[2].isTyped && (
-                      <div className="error_msg_item">
-                        <span className="title_error_msg">Mesaj:</span>
-                        <ul className="content">
-                          <li>2 karakterden uzun olmaı</li>
-                          <li>özel karakterler içermemeli</li>
-                        </ul>
-                      </div>
-                    )}
-                  </div>
                   <button 
                     className="contact_send"
                     disabled={!isValid && true}
