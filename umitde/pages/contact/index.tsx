@@ -103,10 +103,10 @@ const Contact: NextPage = () => {
         },
         body: JSON.stringify(data)
       })
+        .then(res => res.json())
         .then(res => {
           console.log(res);
-        });
-
+        })
     }
 
     return (
