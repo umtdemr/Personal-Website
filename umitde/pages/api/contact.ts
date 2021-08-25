@@ -18,6 +18,7 @@ export default async function contact(
     //     secure: false,
     // });
     
+    let testAccount = await nodemailer.createTestAccount();
     const mailMessage = `
         Sent by: ${req.body.name} <${req.body.email}>
 
@@ -28,13 +29,23 @@ export default async function contact(
 
     
     
+    // let transporter = nodemailer.createTransport({
+    //     host: "smtp.yandex.ru",
+    //     port: 587,
+    //     secure: false, // true for 465, false for other ports
+    //     auth: {
+    //         user: process.env.mail_acc, // generated ethereal user
+    //         pass: process.env.mail_password, // generated ethereal password
+    //     },
+    // });
+
     let transporter = nodemailer.createTransport({
-        host: "smtp.yandex.ru",
+        host: "smtp.ethereal.email",
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-            user: process.env.mail_acc, // generated ethereal user
-            pass: process.env.mail_password, // generated ethereal password
+          user: testAccount.user, // generated ethereal user
+          pass: testAccount.pass, // generated ethereal password
         },
     });
 
@@ -59,6 +70,11 @@ export default async function contact(
     try {
 
         let info = await transporter.sendMail(mailData);
+        console.log("Message sent: %s", info.messageId);
+        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+      
+        // Preview only available when sending through an Ethereal account
+        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     } catch (err) {
         res.status(404).json({
             "sent": false,
