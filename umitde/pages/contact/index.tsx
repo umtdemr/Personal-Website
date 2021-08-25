@@ -95,6 +95,11 @@ const Contact: NextPage = () => {
         message,
         email,
       }
+
+      const form_container = document.querySelector(".form_container")!;
+      const old_html = form_container.innerHTML;
+      form_container.classList.add("success");
+      form_container.innerHTML = "<p>Bekleniyor...</p>"
       fetch('/api/contact/', {
         method: "POST",
         headers: {
@@ -106,6 +111,9 @@ const Contact: NextPage = () => {
         .then(res => res.json())
         .then(res => {
           console.log(res);
+          if (res.sent) {
+            form_container.innerHTML = "<img src='https://www.freeiconspng.com/thumbs/success-icon/success-icon-10.png' /> <span class='message'>Mesajın alındı. En yakın sürede görüşmek gözere</span>";
+          }
         })
     }
 

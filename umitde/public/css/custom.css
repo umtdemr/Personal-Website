@@ -27,3 +27,21 @@ footer .full_divider {
 .contact_page textarea {
   resize: none;
 }
+
+
+.form_container.success {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+}
+
+.form_container.success img{ 
+    max-width: 33%;
+    margin-bottom: 15px;
+}
+.form_container.success p{
+    font-size: 17px;
+}
