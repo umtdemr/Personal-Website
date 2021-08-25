@@ -1,19 +1,23 @@
 import type { NextPage } from "next";
 import React, { ChangeEvent, useRef, useState, useEffect, FormEvent } from 'react'
 
+import { ValidType, ValidInputs } from "./contact.types";
+
 
 const Contact: NextPage = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
-    const [isValidAll, setIsValidAll] = useState<[boolean, boolean, boolean]>([false, false, false]);
+    const [isValidAll, setIsValidAll] = useState<[
+      ValidType,
+      ValidType,
+      ValidType
+    ]>([
+      {isValid: false, isTyped: false},
+      {isValid: false, isTyped: false},
+      {isValid: false, isTyped: false},
+    ]);
     const [isValid, setIsValid] = useState(false);
-
-    enum ValidInputs {
-      NAME = 0,
-      EMAIL = 1,
-      MESSAGE = 2,
-    }
 
 
     const nameEl = useRef<HTMLInputElement>(null);
@@ -50,14 +54,15 @@ const Contact: NextPage = () => {
         type: ValidInputs
       ) => {
         setVal(value);
-        let oldValid = [...isValidAll] as [boolean, boolean, boolean];
+        let oldValid = [...isValidAll] as [ValidType, ValidType, ValidType];
         if (re.test(value)) {
           inputOrTextarea.classList.remove("invalid");
-          oldValid[type] = true;
+          oldValid[type].isValid = true;
         } else {
           inputOrTextarea.classList.add("invalid");
-          oldValid[type] = false;
+          oldValid[type].isValid = false;
         }
+        oldValid[type].isTyped = true;
         setIsValidAll(oldValid);
     }
 
@@ -79,7 +84,7 @@ const Contact: NextPage = () => {
     }, []);
 
     useEffect(() => {
-      setIsValid(isValidAll.every(item => item));
+      setIsValid(isValidAll.every(item => item.isValid));
     }, [isValidAll]);
 
     const sendMessage = (e: FormEvent) => {
@@ -139,10 +144,33 @@ const Contact: NextPage = () => {
                     </div>
                   </fieldset>
                   <div className="error_messages">
-                    { !isValidAll[0] && <span>
-                      * İsim 2 karakterden uzun olmalı <br />
-                      * İsim özel karakterler içermemeli <br />
-                    </span> }
+                    { !isValidAll[0].isValid && isValidAll[0].isTyped && (
+                      <div className="error_msg_item">
+                        <span className="title_error_msg">İsim:</span>
+                        <ul className="content">
+                          <li>2 karakterden uzun olmaı</li>
+                          <li>özel karakterler içermemeli</li>
+                        </ul>
+                      </div>
+                    )}
+                    { !isValidAll[1].isValid && isValidAll[1].isTyped && (
+                      <div className="error_msg_item">
+                        <span className="title_error_msg">E-Posta:</span>
+                        <ul className="content">
+                          <li>2 karakterden uzun olmaı</li>
+                          <li>özel karakterler içermemeli</li>
+                        </ul>
+                      </div>
+                    )}
+                    { !isValidAll[2].isValid && isValidAll[2].isTyped && (
+                      <div className="error_msg_item">
+                        <span className="title_error_msg">Mesaj:</span>
+                        <ul className="content">
+                          <li>2 karakterden uzun olmaı</li>
+                          <li>özel karakterler içermemeli</li>
+                        </ul>
+                      </div>
+                    )}
                   </div>
                   <button 
                     className="contact_send"
