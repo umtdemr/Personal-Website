@@ -18,11 +18,13 @@ const Contact: NextPage = () => {
       {isValid: false, isTyped: false},
     ]);
     const [isValid, setIsValid] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
 
     const nameEl = useRef<HTMLInputElement>(null);
     const emailEl = useRef<HTMLInputElement>(null);
     const messageEl = useRef<HTMLTextAreaElement>(null);
+    const sendBtnEl = useRef<HTMLButtonElement>(null);
     
     const handleName = (e: ChangeEvent<HTMLInputElement>) => {
       let val = e.target.value;
@@ -87,19 +89,23 @@ const Contact: NextPage = () => {
       setIsValid(isValidAll.every(item => item.isValid));
     }, [isValidAll]);
 
+    useEffect(() => {
+      if (isLoading) {
+      }
+    }, [isLoading]);
+
     const sendMessage = (e: FormEvent) => {
       e.preventDefault();
       console.log("mesaj gönder");
+      if (isLoading)
+        return;
       let data: MailData = {
         name,
         message,
         email,
       }
-
+      setIsLoading(true);
       const form_container = document.querySelector(".form_container")!;
-      const old_html = form_container.innerHTML;
-      form_container.classList.add("success");
-      form_container.innerHTML = "<p>Bekleniyor...</p>"
       fetch('/api/contact/', {
         method: "POST",
         headers: {
@@ -108,13 +114,21 @@ const Contact: NextPage = () => {
         },
         body: JSON.stringify(data)
       })
-        .then(res => res.json())
-        .then(res => {
-          console.log(res);
-          if (res.sent) {
-            form_container.innerHTML = "<img src='https://www.freeiconspng.com/thumbs/success-icon/success-icon-10.png' /> <span class='message'>Mesajın alındı. En yakın sürede görüşmek gözere</span>";
+      .then(res => res.json())
+      .then(res => {
+        if (res.sent) {
+            form_container.classList.add("message-received");
+            const success_container = document.querySelector(".form_message .success")!;
+            success_container.classList.add("active");
+            setTimeout(() => {
+              form_container.classList.remove("message-received");
+            success_container.classList.remove("active");
+            }, 6000);
           }
         })
+      .finally(() => {
+        setIsLoading(false);
+      })
     }
 
     return (
@@ -171,8 +185,23 @@ const Contact: NextPage = () => {
                   <button 
                     className="contact_send"
                     disabled={!isValid && true}
-                    >Gönder</button>
+                    ref={sendBtnEl}
+                    >
+                      { isLoading && 
+                        <>
+                       <i className="fa fa-circle-notch fa-spin"></i> &nbsp; </> }
+                      Gönder</button>
                 </form>
+                <div className="form_message">
+                  <div className="success">
+                    <img src='https://www.freeiconspng.com/thumbs/success-icon/success-icon-10.png' /> 
+                    <span className='message'>Mesajın alındı. En yakın sürede görüşmek gözere</span>
+                  </div>
+                  <div className="error">
+                    <img src='https://www.freeiconspng.com/thumbs/success-icon/success-icon-10.png' /> 
+                    <span className='message'>Hata: <span className="error"></span></span>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="secondary_column">

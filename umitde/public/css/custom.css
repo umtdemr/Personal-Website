@@ -38,10 +38,25 @@ footer .full_divider {
     padding-left: 20px !important;
 }
 
-.form_container.success img{ 
-    max-width: 33%;
-    margin-bottom: 15px;
+.form_container.message-received form{ 
+  display: none;
 }
-.form_container.success p{
-    font-size: 17px;
+.form_message .success, .form_message .error {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 300ms all;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form_message img{
+  max-width: 33%;
+  margin-bottom: 20px;
+}
+
+.form_message .success.active, .form_message .error.active {
+  max-height: 100%;
+  opacity: 1;
 }
