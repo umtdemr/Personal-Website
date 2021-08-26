@@ -37,25 +37,65 @@ const About: NextPage = () => {
                 duration: .7
             }
         );
-        let tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".features_container .features",
-            }
+        gsap.from(
+          ".skills .title_w_sum",
+          {
+            scrollTrigger: ".skills .title_w_sum",
+            y: 10,
+            opacity: 0,
+            duration: .7
+          }
+        )
+        gsap.from(".testimonials_container--title", {
+          scrollTrigger: {
+            trigger: ".testimonials_container--title",
+          },
+          y: 10,
+          opacity: 0,
+          duration: .7
         })
-        
+        // const y_anims = gsap.utils.toArray(".anim_y_top");
+        // y_anims.forEach(item => {
+        //   gsap.from(item as any,
+        //     {
+        //       scrollTrigger: {
+        //         trigger: item as null,
+        //         snap: {
+        //           ease: Power3.
+        //         }
+        //       },
+        //       y: 10,
+        //       opacity: 0,
+        //       duration: .7
+        //     }
+        //   )
+        // });
+
         const from_lefts = gsap.utils.toArray(".from_left");
         const from_rights = gsap.utils.toArray(".from_right");
         from_lefts.forEach(from_left => {
-            tl.from(from_left as any, {
+            gsap.from(from_left as any, {
+                scrollTrigger: {
+                  trigger: from_left as null,
+                  snap: {
+                    ease: Power3.easeIn
+                  }
+                },
                 opacity: 0,
                 x: -300,
                 duration: .7,
             });
         });
         from_rights.forEach(from_right => {
-            tl.from(from_right as any, {
+            gsap.from(from_right as any, {
+                scrollTrigger: {
+                  trigger: from_right as null,
+                  snap: {
+                    ease: Power3.easeIn
+                  }
+                },
                 opacity: 0,
-                x: 300,
+                x: +300,
                 duration: .7,
             });
         });
@@ -101,11 +141,11 @@ const About: NextPage = () => {
                 </div>
             </div>
             <div className="skills">
-                <div className="title_w_sum">
+                <div className="title_w_sum anim_y_top">
                     <h2>Kullandığım Teknolojiler</h2>
                     <span>Kişisel veya projelerimde kullandığım teknolojik araçlar</span>
                 </div>
-                <div className="skills__info">
+                <div className="skills__info anim_y_top">
                     <div className="skills__info--techs" id="tech_wrapper">
                         <a className="tech_item active" href="#" data-target={1}><span>Django</span></a>
                         <a className="tech_item" href="#" data-target={2}><span>React</span></a>
@@ -170,7 +210,7 @@ const About: NextPage = () => {
                 </div>
             </div>
             <div className="features_container">
-                <div className="title_w_sum opacity_anim">
+                <div className="title_w_sum anim_y_top">
                     <h2>İlgi Alanlarım</h2>
                     <span>Profesyonel ve Hobi amaçlı ilgilendiğim bazı teknolojiler</span>
                 </div>
