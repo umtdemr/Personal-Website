@@ -5,12 +5,71 @@ import Image from "next/image"
 
 import { useEffect } from "react";
 
+import gsap from "gsap";
+import { Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
 import runJs from "../../utils/about/run";
 
+gsap.registerPlugin(ScrollTrigger);
 
 const About: NextPage = () => {
-   
     useEffect(() => {
+        // gsap.to(
+        //     ".about_me__info--title",
+        //     {
+        //         scrollTrigger: ".about_me__info--title",
+        //         x: 500,
+        //         opacity: 1
+        //     },
+        // )
+        gsap.fromTo(
+            document.querySelector(".about_me__info--title"),
+            { opacity: 0, x:-20 },
+            { opacity: 1, x: 0, duration: .7 }
+        );
+        gsap.from(
+            ".features_container .title_w_sum",
+            {
+                scrollTrigger: ".features_container .title_w_sum",
+                y: 10,
+                opacity: 0,
+                duration: .7
+            }
+        );
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".features_container .features",
+            }
+        })
+        
+        const from_lefts = gsap.utils.toArray(".from_left");
+        const from_rights = gsap.utils.toArray(".from_right");
+        from_lefts.forEach(from_left => {
+            tl.from(from_left as any, {
+                opacity: 0,
+                x: -300,
+                duration: .7,
+            });
+        });
+        from_rights.forEach(from_right => {
+            tl.from(from_right as any, {
+                opacity: 0,
+                x: 300,
+                duration: .7,
+            });
+        });
+        // tl.from(".from_left2", {
+        //     opacity: 0,
+        //     x: -300,
+        //     delay: .3,
+        // });
+
+        gsap.fromTo(
+            document.querySelector(".about_me__info--desc"),
+            { opacity: 0, x:-20 },
+            { opacity: 1, x: 0, duration: .7 }
+        )
         runJs();
     }, [])
     return (
@@ -23,8 +82,8 @@ const About: NextPage = () => {
             <Script src="/js/skills.js" strategy="beforeInteractive"/>
             <div className="about_me_container">
                 <div className="about_me__info">
-                    <h2>About Me</h2>
-                    <p>
+                    <h2 className="about_me__info--title opacity_anim">About Me</h2>
+                    <p className="about_me__info--desc">
                         Düzce üniversitesi bilmem ne mezunuyum şunu yaptım bunu yaptım
                         şunu hallettim falan filan Lorem ipsum dolor sit amet consectetur
                         adipisicing elit. Qui itaque dolores harum provident! Quas beatae
@@ -111,12 +170,12 @@ const About: NextPage = () => {
                 </div>
             </div>
             <div className="features_container">
-                <div className="title_w_sum">
+                <div className="title_w_sum opacity_anim">
                     <h2>İlgi Alanlarım</h2>
                     <span>Profesyonel ve Hobi amaçlı ilgilendiğim bazı teknolojiler</span>
                 </div>
                 <div className="features">
-                    <div className="feature__item">
+                    <div className="feature__item from_left opacity_anim">
                         <img src="svg/features/backend.svg" alt="Backend" />
                         <div className="feature__item--info">
                             <h3>Backend</h3>
@@ -125,7 +184,7 @@ const About: NextPage = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="feature__item">
+                    <div className="feature__item from_right opacity_anim">
                         <img src="svg/features/frontend.svg" alt="Frontend" />
                         <div className="feature__item--info">
                             <h3>Frontend</h3>
@@ -136,7 +195,7 @@ const About: NextPage = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="feature__item">
+                    <div className="feature__item from_left opacity_anim">
                         <img src="svg/features/mobile.svg" alt="Mobile" />
                         <div className="feature__item--info">
                             <h3>Mobile Apps</h3>
@@ -146,7 +205,7 @@ const About: NextPage = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="feature__item">
+                    <div className="feature__item from_right opacity_anim">
                         <img src="svg/features/devops.svg" alt="Devops" />
                         <div className="feature__item--info">
                             <h3>Devops</h3>
