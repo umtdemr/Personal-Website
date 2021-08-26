@@ -95,7 +95,6 @@ const Contact: NextPage = () => {
 
     const sendMessage = async (e: FormEvent) => {
       e.preventDefault();
-      console.log("mesaj gönder");
       if (isLoading)
         return;
       let data: MailData = {

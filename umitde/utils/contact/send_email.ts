@@ -22,7 +22,6 @@ export default async function send_email(
       .then(res => res.json())
       .then(res => {
         form_container.classList.add("message-received");
-        console.log(res);
           if (res.sent) {
             setTimeout(() => {
               success_container.classList.add("active");
