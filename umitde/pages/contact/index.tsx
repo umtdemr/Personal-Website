@@ -106,6 +106,8 @@ const Contact: NextPage = () => {
       }
       setIsLoading(true);
       const form_container = document.querySelector(".form_container")!;
+      const success_container = document.querySelector(".form_message .success")!;
+      const error_container = document.querySelector(".form_message .error")!;
       fetch('/api/contact/', {
         method: "POST",
         headers: {
@@ -116,18 +118,21 @@ const Contact: NextPage = () => {
       })
       .then(res => res.json())
       .then(res => {
+        form_container.classList.add("message-received");
         if (res.sent) {
-            form_container.classList.add("message-received");
-            const success_container = document.querySelector(".form_message .success")!;
-            success_container.classList.add("active");
             setTimeout(() => {
-              form_container.classList.remove("message-received");
-            success_container.classList.remove("active");
-            }, 6000);
+              success_container.classList.add("active");
+            }, 300);
           }
         })
-      .finally(() => {
-        setIsLoading(false);
+        .finally(() => {
+          setIsLoading(false);
+          setTimeout(() => {
+            success_container.classList.remove("active");
+          }, 11500);
+          setTimeout(() => {
+            form_container.classList.remove("message-received");
+          }, 12000);
       })
     }
 
