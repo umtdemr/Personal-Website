@@ -3,8 +3,16 @@ import Script from "next/script"
 import Head from "next/head";
 import Image from "next/image"
 
+import { useEffect } from "react";
+
+import runJs from "../../utils/about/run";
+
 
 const About: NextPage = () => {
+   
+    useEffect(() => {
+        runJs();
+    }, [])
     return (
         <div className="container">
             <Head>
@@ -13,7 +21,6 @@ const About: NextPage = () => {
             </Head>
             <Script src="/plugins/swiper/js/swiper-bundle.min.js"  strategy="beforeInteractive"/>
             <Script src="/js/skills.js" strategy="beforeInteractive"/>
-            <Script src="/js/run.js" strategy="lazyOnload"/>
             <div className="about_me_container">
                 <div className="about_me__info">
                     <h2>About Me</h2>
