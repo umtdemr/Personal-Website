@@ -7,6 +7,7 @@ import { ValidType, ValidInputs, MailData } from "../../types/contact.types";
 const Contact: NextPage = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
+    const [errMsg, setErrMsg] = useState('');
     const [message, setMessage] = useState('');
     const [isValidAll, setIsValidAll] = useState<[
       ValidType,
@@ -119,21 +120,28 @@ const Contact: NextPage = () => {
       .then(res => res.json())
       .then(res => {
         form_container.classList.add("message-received");
-        if (res.sent) {
+        console.log(res);
+          if (res.sent) {
             setTimeout(() => {
               success_container.classList.add("active");
             }, 300);
+          }else {
+            setTimeout(() => {
+              error_container.classList.add("active");
+            }, 300);
+            setErrMsg(res.error);
           }
         })
         .finally(() => {
           setIsLoading(false);
           setTimeout(() => {
             success_container.classList.remove("active");
+            error_container.classList.remove("active");
           }, 11500);
           setTimeout(() => {
             form_container.classList.remove("message-received");
           }, 12000);
-      })
+        })
     }
 
     return (
@@ -203,8 +211,12 @@ const Contact: NextPage = () => {
                     <span className='message'>Mesajın alındı. En yakın sürede görüşmek gözere</span>
                   </div>
                   <div className="error">
-                    <img src='https://www.freeiconspng.com/thumbs/success-icon/success-icon-10.png' /> 
-                    <span className='message'>Hata: <span className="error"></span></span>
+                    <img src='https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png' /> 
+                    <span className='message'>
+                      Mesajın gönderilirken hata meydana geldi.
+                      Lütfen daha sonra tekrar dene ya da <a href="mailto:umitde296@gmail.com">umitde296@gmail.com</a> adresinden bana mail atmayı dene.
+                      <br />
+                      Hata mesajı: {errMsg}</span>
                   </div>
                 </div>
               </div>

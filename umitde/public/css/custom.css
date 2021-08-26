@@ -67,6 +67,16 @@ footer .full_divider {
   max-width: 33%;
   margin-bottom: 20px;
 }
+
+.form_message .message {
+  margin-top: 15px;
+  text-align: center;
+  color: #4b5d68;
+  line-height: 24px;
+}
+.form_message .message a {
+  font-weight: 600;
+}
 .form_message .success.active, .form_message .error.active {
   max-height: 100%;
   opacity: 1;
