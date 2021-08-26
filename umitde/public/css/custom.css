@@ -81,3 +81,12 @@ footer .full_divider {
   max-height: 100%;
   opacity: 1;
 }
+
+.contact_form_section .secondary_column .why-me--list li::before {
+  background: url(../images/check.png);
+  background-size: 100%;
+}
+
+input, select, textarea {
+  background-image: url(../svg/error.svg);
+}
