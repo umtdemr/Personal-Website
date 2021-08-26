@@ -15,14 +15,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const About: NextPage = () => {
     useEffect(() => {
-        // gsap.to(
-        //     ".about_me__info--title",
-        //     {
-        //         scrollTrigger: ".about_me__info--title",
-        //         x: 500,
-        //         opacity: 1
-        //     },
-        // )
         gsap.fromTo(
             document.querySelector(".about_me__info--title"),
             { opacity: 0, x:-20 },
@@ -46,6 +38,17 @@ const About: NextPage = () => {
             duration: .7
           }
         )
+        gsap.from(
+          ".skills__info",
+          {
+            scrollTrigger: {
+              trigger: ".skills__info",
+            },
+            y: -30,
+            opacity: 0,
+            duration: .7,
+          }
+        )
         gsap.from(".testimonials_container--title", {
           scrollTrigger: {
             trigger: ".testimonials_container--title",
@@ -54,22 +57,6 @@ const About: NextPage = () => {
           opacity: 0,
           duration: .7
         })
-        // const y_anims = gsap.utils.toArray(".anim_y_top");
-        // y_anims.forEach(item => {
-        //   gsap.from(item as any,
-        //     {
-        //       scrollTrigger: {
-        //         trigger: item as null,
-        //         snap: {
-        //           ease: Power3.
-        //         }
-        //       },
-        //       y: 10,
-        //       opacity: 0,
-        //       duration: .7
-        //     }
-        //   )
-        // });
 
         const from_lefts = gsap.utils.toArray(".from_left");
         const from_rights = gsap.utils.toArray(".from_right");
