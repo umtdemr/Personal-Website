@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Image from "next/image";
 import React, { ChangeEvent, useRef, useState, useEffect, FormEvent } from 'react'
 
 import { ValidType, ValidInputs, MailData } from "../../types/contact.types";
@@ -207,11 +208,11 @@ const Contact: NextPage = () => {
                 </form>
                 <div className="form_message">
                   <div className="success">
-                    <img src='https://www.freeiconspng.com/thumbs/success-icon/success-icon-10.png' /> 
+                    <Image src="/images/success.png" width={150} height={150} alt="Mesaj başarıyla gönderildi"/>
                     <span className='message'>Mesajın alındı. En yakın sürede görüşmek gözere</span>
                   </div>
                   <div className="error">
-                    <img src='https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png' /> 
+                    <Image src="/images/error.png" width={150} height={150} alt="Mesaj gönderilirken bir hata oluştu"/>
                     <span className='message'>
                       Mesajın gönderilirken hata meydana geldi.
                       Lütfen daha sonra tekrar dene ya da <a href="mailto:umitde296@gmail.com">umitde296@gmail.com</a> adresinden bana mail atmayı dene.
