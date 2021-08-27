@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import React, { ChangeEvent, useRef, useState, useEffect, FormEvent } from 'react'
+import React, { ChangeEvent, useRef, useState, useEffect, FormEvent, createRef} from 'react'
+import ReCAPTCHA from "react-google-recaptcha";
 
 import { ValidType, ValidInputs, MailData } from "../../types/contact.types";
 import send_email from "../../utils/contact/send_email";
@@ -22,6 +23,7 @@ const Contact: NextPage = () => {
     ]);
     const [isValid, setIsValid] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const recaptchaRef = createRef<HTMLElement>();
 
 
     const nameEl = useRef<HTMLInputElement>(null);
@@ -97,17 +99,30 @@ const Contact: NextPage = () => {
       e.preventDefault();
       if (isLoading)
         return;
-      let data: MailData = {
-        name,
-        message,
-        email,
-      }
+      // let data: MailData = {
+      //   name,
+      //   message,
+      //   email,
+      // }
       
-      await send_email(
-        setIsLoading,
-        setErrMsg,
-        data
-      );
+      // await send_email(
+      //   setIsLoading,
+      //   setErrMsg,
+      //   data
+      // );
+      recaptchaRef.current!.execute();
+    }
+
+    const onReCAPTCHAChange = (captchaCode: string) => {
+      if(!captchaCode) {
+        return;
+      }
+      // Else reCAPTCHA was executed successfully so proceed with the 
+      // alert
+      alert(`Hey, ${email}`);
+      // Reset the reCAPTCHA so that it can be executed again if user 
+      // submits another email.
+      recaptchaRef.current!.reset();
     }
 
     return (
@@ -126,6 +141,13 @@ const Contact: NextPage = () => {
             <div className="form_column">
               <div className="form_container">
                 <form action="" method="post" onSubmit={(e) => sendMessage(e)}>
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    size="invisible"
+                    sitekey={process.env.SITE_KEY}
+                    onChange={onReCAPTCHAChange}
+                  />
+
                   <fieldset>
                     <div className="form_group">
                       <label htmlFor="name">Ad</label>
