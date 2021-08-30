@@ -141,7 +141,7 @@ const Contact: NextPage = () => {
                   <ReCAPTCHA
                     ref={recaptchaRef}
                     size="invisible"
-                    sitekey={process.env.CAPCTCHA_SITE_KEY}
+                    sitekey={process.env.CAPCTCHA_SITE_KEY!}
                     onChange={onReCAPTCHAChange}
                   />
 
