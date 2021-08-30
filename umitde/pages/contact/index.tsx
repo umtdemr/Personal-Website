@@ -23,7 +23,7 @@ const Contact: NextPage = () => {
     ]);
     const [isValid, setIsValid] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const recaptchaRef = createRef<HTMLElement>();
+    const recaptchaRef = createRef<ReCAPTCHA>();
 
 
     const nameEl = useRef<HTMLInputElement>(null);
@@ -97,33 +97,29 @@ const Contact: NextPage = () => {
 
     const sendMessage = async (e: FormEvent) => {
       e.preventDefault();
-      if (isLoading)
-        return;
-      // let data: MailData = {
-      //   name,
-      //   message,
-      //   email,
-      // }
-      
-      // await send_email(
-      //   setIsLoading,
-      //   setErrMsg,
-      //   data
-      // );
+      if (isLoading || !isValidAll)
+      return;
+      setIsLoading(true);
       recaptchaRef.current!.execute();
-      console.log(recaptchaRef.current);
-    }
 
-    const onReCAPTCHAChange = (captchaCode: string) => {
+    }
+      
+    const onReCAPTCHAChange = async (captchaCode: string) => {
       if(!captchaCode) {
+        setIsLoading(false);
         return;
       }
-      // Else reCAPTCHA was executed successfully so proceed with the 
-      // alert
-      alert(`Hey, ${email}  ${captchaCode}`);
-      // Reset the reCAPTCHA so that it can be executed again if user 
-      // submits another email.
-      recaptchaRef.current!.reset();
+      let data: MailData = {
+        name,
+        message,
+        email,
+      }
+        
+      await send_email(
+        setIsLoading,
+        setErrMsg,
+        data
+      );
     }
 
     return (
