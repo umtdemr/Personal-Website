@@ -111,6 +111,7 @@ const Contact: NextPage = () => {
       //   data
       // );
       recaptchaRef.current!.execute();
+      console.log(recaptchaRef.current);
     }
 
     const onReCAPTCHAChange = (captchaCode: string) => {
@@ -119,7 +120,7 @@ const Contact: NextPage = () => {
       }
       // Else reCAPTCHA was executed successfully so proceed with the 
       // alert
-      alert(`Hey, ${email}`);
+      alert(`Hey, ${email}  ${captchaCode}`);
       // Reset the reCAPTCHA so that it can be executed again if user 
       // submits another email.
       recaptchaRef.current!.reset();
@@ -144,7 +145,7 @@ const Contact: NextPage = () => {
                   <ReCAPTCHA
                     ref={recaptchaRef}
                     size="invisible"
-                    sitekey={process.env.SITE_KEY}
+                    sitekey={process.env.CAPCTCHA_SITE_KEY}
                     onChange={onReCAPTCHAChange}
                   />
 
