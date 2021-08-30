@@ -97,7 +97,10 @@ const About: NextPage = () => {
             { opacity: 0, x:-20 },
             { opacity: 1, x: 0, duration: .7 }
         )
-        runJs();
+        // runJs();
+        if (typeof window !== "undefined") {
+          runJs();
+        }
     }, [])
     return (
         <div className="container">
