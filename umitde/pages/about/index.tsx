@@ -170,7 +170,7 @@ const About: NextPage = () => {
                     </div>
                 </div>
             </div>
-            <Link href="/contact" passHref>
+            <Link href="/contact" passHref >
                 <a href="#" className="white_button about_contact_btn">İletişime Geç</a>
             </Link>
         </div>
