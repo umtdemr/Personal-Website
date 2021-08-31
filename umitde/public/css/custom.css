@@ -90,3 +90,22 @@ footer .full_divider {
 input, select, textarea {
   background-image: url(../svg/error.svg);
 }
+
+@keyframes snazzy {
+  0% {
+    transform: translateX(0px);
+    filter: none;
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.info--right img{
+  animation-name: snazzy;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
