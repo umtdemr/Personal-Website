@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from "next/link"
 
+declare var toggleMobileMenu: () => void;
 
 const MobileHeader: React.FC = () => {
     return (
@@ -10,7 +11,7 @@ const MobileHeader: React.FC = () => {
           <div className="mobile_menu--first">
             <div className="mobile_menu--logo">
               <Link href="/" passHref>
-                <a href="#" className="logo text">umitde<span className="logo--faded">mir</span></a>
+                <a href="#" onClick={() => toggleMobileMenu()} className="logo text">umitde<span className="logo--faded">mir</span></a>
               </Link>
               <a href="#" className="mobile_menu--closer"
                 ><i className="far fa-times-circle"></i
@@ -18,10 +19,10 @@ const MobileHeader: React.FC = () => {
             </div>
             <div className="mobile_menu--menu">
               <ul>
-                <li><a href="#">Blog</a></li>
+                <li><a href="#" onClick={() => toggleMobileMenu()}>Blog</a></li>
                 <li>
                   <Link href="/about" passHref>
-                    <a className="active">Hakkımda</a>
+                    <a className="active" onClick={() => toggleMobileMenu()}>Hakkımda</a>
                   </Link>
                 </li>
               </ul>
@@ -29,7 +30,7 @@ const MobileHeader: React.FC = () => {
           </div>
           <div className="mobile_menu--last">
             <Link href="/contact" passHref>
-              <button className="white_button with_arrow">
+              <button className="white_button with_arrow" onClick={() => toggleMobileMenu()}>
                 İletişime geç <i className="fas fa-arrow-right"></i>
               </button>
             </Link>
