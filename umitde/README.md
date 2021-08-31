@@ -1,3 +1,5 @@
 # Umitde
 
-https://prateeksurana.me/blog/integrating-recaptcha-with-next/
+## To do before production
+
+- [ ] Email..
