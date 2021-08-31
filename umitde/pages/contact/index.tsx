@@ -104,7 +104,7 @@ const Contact: NextPage = () => {
 
     }
       
-    const onReCAPTCHAChange = async (captchaCode: string) => {
+    const onReCAPTCHAChange = async (captchaCode: string | undefined | null) => {
       if(!captchaCode) {
         setIsLoading(false);
         return;
