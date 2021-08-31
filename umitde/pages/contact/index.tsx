@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { ChangeEvent, useRef, useState, useEffect, FormEvent, createRef} from 'react'
 import ReCAPTCHA from "react-google-recaptcha";
 
-import { ValidType, ValidInputs, MailData } from "../../types/contact.types";
+import { ValidType, ValidInputs, MailData, CaptchaVerify } from "../../types/contact.types";
 import send_email from "../../utils/contact/send_email";
 
 
@@ -109,7 +109,11 @@ const Contact: NextPage = () => {
         setIsLoading(false);
         return;
       }
-      let data: MailData = {
+      const captcha_data: CaptchaVerify = {
+        "response": captchaCode
+      }
+
+      let mail_data: MailData = {
         name,
         message,
         email,
@@ -118,7 +122,8 @@ const Contact: NextPage = () => {
       await send_email(
         setIsLoading,
         setErrMsg,
-        data
+        mail_data,
+        captcha_data
       );
     }
 

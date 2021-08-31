@@ -16,3 +16,10 @@ export interface MailData {
     email: string;
     message: string;
 }
+
+
+export interface CaptchaVerify {
+    response: string,
+    secret?: string,
+    remoteip?: string
+}
