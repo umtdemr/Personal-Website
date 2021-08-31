@@ -12,6 +12,7 @@ const runAboutAnims = () => {
         {
             scrollTrigger: {
                 trigger: ".features_container .title_w_sum",
+                start: "center center",
             },
             y: 10,
             opacity: 0,
@@ -21,7 +22,10 @@ const runAboutAnims = () => {
     gsap.from(
         ".skills .title_w_sum",
         {
-            scrollTrigger: ".skills .title_w_sum",
+            scrollTrigger: {
+                trigger: ".skills .title_w_sum",
+                start: "center center"
+            },
             y: 10,
             opacity: 0,
             duration: .7
@@ -41,6 +45,7 @@ const runAboutAnims = () => {
         {
             scrollTrigger: {
                 trigger: ".skills__info",
+                start: "center center"
             },
             y: -30,
             opacity: 0,
