@@ -109,3 +109,11 @@ input, select, textarea {
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
+
+.about_contact_btn {
+  font-size: 18px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  width: 202px;
+}

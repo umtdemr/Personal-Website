@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import Script from "next/script"
 import Head from "next/head";
 import Image from "next/image"
@@ -169,75 +170,9 @@ const About: NextPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="testimonials_container swiper-container">
-                <h2 className="testimonials_container--title" data-aos-anchor-placement="top-bottom">
-                Hakkımda Ne Diyorlar
-                </h2>
-                <div className="testimonial swiper-wrapper">
-                    <div className="testimonial__item swiper-slide active">
-                        <div className="testimonial__item--overlay" />
-                        <div className="testimonial__item--img">
-                            <Image src="/images/testimonial/hikmet-anil-oztekin.jpg"
-                                width="400"
-                                height="400"
-                                alt="Hikmet anıl öztekin"
-                            />
-                        </div>
-                        <div className="testimonial__item--info">
-                            <h3 className="title">Hikmet Anıl Öztekin</h3>
-                            <span className="summary">Yazar</span>
-                            <p>
-                                Ümit, ajansımızda bir yıl stajyer olarak çalışmıştı.
-                                Ajansımıza ilk geldiği andaki bilgisi ile bir yıl sonraki bilgisi arasında çok fark vardı.
-                                Kendisini çok geliştirmişti. Öğrendiğime göre geliştirmeye de devam ediyor.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="testimonial__item swiper-slide">
-                        <div className="testimonial__item--overlay" />
-                        <div className="testimonial__item--img">
-                            <Image src="/images/avatars/avatar1.png"
-                                width="400"
-                                height="400"
-                                alt="İlkim Erbudak"
-                            />
-                        </div>
-                        <div className="testimonial__item--info">
-                            <h3 className="title">İlkim Erbudak</h3>
-                            <span className="summary">Head Of Digital Marketing</span>
-                            <p>
-                                Ümitle yaklaşık 4 yıllık bir tanışıklığımız var.
-                                Kendisine verilen işleri sorumluluk alarak hızlıca bitirebilme yeteneğine sahip birisidir.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="testimonial__item swiper-slide">
-                        <div className="testimonial__item--overlay" />
-                        <div className="testimonial__item--img">
-                            <Image src="/images/avatars/avatar2.png"
-                                width="400"
-                                height="400"
-                                alt="Şehriban Ürün"
-                            />
-                        </div>
-                        <div className="testimonial__item--info">
-                            <h3 className="title">Şehriban Ürün</h3>
-                            <span className="summary">Digital Marketing Consultant</span>
-                            <p>
-                                Ümitle freelance olarak çalışmıştık.
-                                Kendi markamız olan <a href="https://hierapi.com">hierapi.com</a> e ticaret sitesi görevini vermiştik.
-                                
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="actions">
-                    <div className="swiper-pagination swiper-button-white" />
-                </div>
-                {/* If we need navigation buttons */}
-                <div className="swiper-button-prev swiper-button-white" />
-                <div className="swiper-button-next swiper-button-white" />
-            </div>
+            <Link href="/contact" passHref>
+                <a href="#" className="white_button about_contact_btn">İletişime Geç</a>
+            </Link>
         </div>
 
     )

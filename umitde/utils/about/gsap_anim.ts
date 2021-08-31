@@ -4,15 +4,14 @@ import { Power3 } from "gsap";
 
 const runAboutAnims = () => {
     gsap.from(
-        document.querySelector(".about_me__info--title"),
-        { opacity: 0, x: -20 },
+        ".about_me__info--title",
+        { opacity: 0, x: -20, duration: .7 },
     );
     gsap.from(
         ".features_container .title_w_sum",
         {
             scrollTrigger: {
                 trigger: ".features_container .title_w_sum",
-                start: "center center",
             },
             y: 10,
             opacity: 0,
@@ -24,7 +23,6 @@ const runAboutAnims = () => {
         {
             scrollTrigger: {
                 trigger: ".skills .title_w_sum",
-                start: "center center"
             },
             y: 10,
             opacity: 0,
@@ -45,7 +43,6 @@ const runAboutAnims = () => {
         {
             scrollTrigger: {
                 trigger: ".skills__info",
-                start: "center center"
             },
             y: -30,
             opacity: 0,
@@ -66,7 +63,6 @@ const runAboutAnims = () => {
         gsap.from(from_left as any, {
             scrollTrigger: {
                 trigger: from_left as null,
-                start: "center center",
                 snap: {
                     ease: Power3.easeIn,
                     delay: 1,
@@ -81,7 +77,6 @@ const runAboutAnims = () => {
         gsap.from(from_right as any, {
             scrollTrigger: {
                 trigger: from_right as null,
-                start: "center center",
                 snap: {
                     ease: Power3.easeIn
                 }
@@ -98,9 +93,20 @@ const runAboutAnims = () => {
     // });
 
     gsap.fromTo(
-        document.querySelector(".about_me__info--desc"),
+        ".about_me__info--desc",
         { opacity: 0, x: -20 },
         { opacity: 1, x: 0, duration: .7 }
+    )
+    gsap.from(
+        ".about_contact_btn",
+        {
+            scrollTrigger: {
+                trigger: ".about_contact_btn",
+            },
+            opacity: 0,
+            x: 500,
+            duration: .7
+        }
     )
 }
 export default runAboutAnims;
