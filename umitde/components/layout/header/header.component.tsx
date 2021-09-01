@@ -4,8 +4,15 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import ChangeLangBtn from "../../translate/change-lang-btn";
 
+import tr from "../../../locales/tr";
+import en from "../../../locales/en";
+
 
 const Header: React.FC = () => {
+    const router = useRouter();
+    const { locale } = router;
+  
+    const t = locale === "tr" ? tr : en;
     return (
         <div className="header_wrapper">
             <div className="container">
@@ -18,10 +25,10 @@ const Header: React.FC = () => {
                         <ul className="header--top--menu">
                             <li className="active"><a href="#">Blog</a></li>
                             <li>
-                                <Link href="/about">Hakkımda</Link>
+                                <Link href="/about">{t.about}</Link>
                             </li>
                             <li>
-                                <Link href="/contact">İletişim</Link>
+                                <Link href="/contact">{t.contact}</Link>
                             </li>
                         </ul>
                         <ChangeLangBtn />

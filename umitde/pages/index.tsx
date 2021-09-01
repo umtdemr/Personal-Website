@@ -3,8 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import tr from "../locales/tr"
-import en from "../locales/en"
+import tr from "../locales/home/tr"
+import en from "../locales/home/en"
 
 
 import { useRouter } from 'next/router'
@@ -20,9 +20,9 @@ const Home: NextPage = () => {
     <div className="container">
       <div className="header--info">
         <div className="info--left animate__animated animate__fadeInUp">
-          <h1 className="">{t.home_title}</h1>
+          <h1 className="">{t.title}</h1>
           {
-            (<p dangerouslySetInnerHTML={{__html: t.home_description}}></p>)
+            (<p dangerouslySetInnerHTML={{__html: t.description}}></p>)
           }
           <Link href="/about" passHref>
             <a href="#" className="purple_button">{t.btn_title}</a>
