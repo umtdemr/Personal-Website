@@ -29,7 +29,7 @@ const MobileHeader: React.FC = () => {
               </ul>
             </div>
           </div>
-          <ChangeLangBtn />
+          <ChangeLangBtn isMobile/>
         </div>
         </>
     )

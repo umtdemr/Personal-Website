@@ -1,7 +1,14 @@
 import React from 'react'
 import { useRouter } from "next/router";
 
-const ChangeLangBtn: React.FC = () => {
+
+declare var toggleMobileMenu: () => void;
+
+interface ChangeLangBtnTypes {
+    isMobile?: boolean
+}
+
+const ChangeLangBtn: React.FC<ChangeLangBtnTypes> = ({isMobile}) => {
     const router = useRouter();
     const { locale } = router;
     const change_locale = locale === "tr" ? "en" : "tr"
@@ -12,7 +19,13 @@ const ChangeLangBtn: React.FC = () => {
             with_arrow
             animate__animated animate__fadeInRight
             "
-            onClick={() => router.push("/", "/", { locale: change_locale })}
+            style={{flexDirection: "column"}}
+            onClick={
+                !isMobile ?
+                () => router.push("/", "/", { locale: change_locale })
+                :
+                () => router.push("/", "/", { locale: change_locale }).then(() => toggleMobileMenu())
+            }
         >
             {change_locale.toUpperCase()}
         </button>
