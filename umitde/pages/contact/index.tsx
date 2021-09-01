@@ -137,6 +137,7 @@ const Contact: NextPage = () => {
         mail_data,
         captcha_data
       );
+      recaptchaRef.current!.reset();
     }
 
     return (

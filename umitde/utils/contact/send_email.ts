@@ -37,7 +37,7 @@ export default async function send_email(
       setIsLoading(false);
       setTimeout(() => {
         form_container.scrollIntoView(
-          { block: "end", inline: "nearest", behavior: "smooth" }
+          { block: "end", inline: "center", behavior: "smooth" }
         )
       }, 900);
       setTimeout(() => {
