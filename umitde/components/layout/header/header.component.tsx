@@ -18,19 +18,22 @@ const Header: React.FC = () => {
                             <li>
                                 <Link href="/about">Hakkımda</Link>
                             </li>
+                            <li>
+                                <Link href="/contact">İletişim</Link>
+                            </li>
                         </ul>
-                        <Link href="/contact" passHref>
 
-                        <button
-                        className="
-                        white_button
-                        with_arrow
-                        animate__animated animate__fadeInRight
-                        "
-                        >
-                        İletişime geç <i className="fas fa-arrow-right"></i>
-                        </button>
-                            </Link>
+                        <Link href="/contact" passHref>
+                            <button
+                            className="
+                            white_button
+                            with_arrow
+                            animate__animated animate__fadeInRight
+                            "
+                            >
+                            İletişime geç <i className="fas fa-arrow-right"></i>
+                            </button>
+                        </Link>
                     </div>
                     <a href="#" className="header_toggler">
                         <span></span>
