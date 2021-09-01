@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from "next/link"
+import ChangeLangBtn from '../../translate/change-lang-btn';
 
 declare var toggleMobileMenu: () => void;
 
@@ -28,13 +29,7 @@ const MobileHeader: React.FC = () => {
               </ul>
             </div>
           </div>
-          <div className="mobile_menu--last">
-            <Link href="/contact" passHref>
-              <button className="white_button with_arrow" onClick={() => toggleMobileMenu()}>
-                İletişime geç <i className="fas fa-arrow-right"></i>
-              </button>
-            </Link>
-          </div>
+          <ChangeLangBtn />
         </div>
         </>
     )

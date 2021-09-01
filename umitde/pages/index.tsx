@@ -25,7 +25,7 @@ const Home: NextPage = () => {
             (<p dangerouslySetInnerHTML={{__html: t.home_description}}></p>)
           }
           <Link href="/about" passHref>
-            <a href="#" className="purple_button">Dahasını Öğren</a>
+            <a href="#" className="purple_button">{t.btn_title}</a>
           </Link>
         </div>
         <div className="info--right">

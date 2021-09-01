@@ -1,6 +1,8 @@
 import React from "react"
 
+import { useRouter } from "next/router";
 import Link from "next/link";
+import ChangeLangBtn from "../../translate/change-lang-btn";
 
 
 const Header: React.FC = () => {
@@ -22,18 +24,7 @@ const Header: React.FC = () => {
                                 <Link href="/contact">İletişim</Link>
                             </li>
                         </ul>
-
-                        <Link href="/contact" passHref>
-                            <button
-                            className="
-                            white_button
-                            with_arrow
-                            animate__animated animate__fadeInRight
-                            "
-                            >
-                            İletişime geç <i className="fas fa-arrow-right"></i>
-                            </button>
-                        </Link>
+                        <ChangeLangBtn />
                     </div>
                     <a href="#" className="header_toggler">
                         <span></span>
