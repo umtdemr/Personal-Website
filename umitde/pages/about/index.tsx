@@ -13,11 +13,16 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import runJs from "../../utils/about/run";
 import runAboutAnims from "../../utils/about/gsap_anim";
+import tr from "../../locales/about/tr"
+import en from "../../locales/about/en"
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About: NextPage = () => {
     const router = useRouter();
+    const { locale } = router;
+
+    const t = locale === "tr" ? tr : en;
     useEffect(() => {
        
         runAboutAnims();
@@ -29,25 +34,15 @@ const About: NextPage = () => {
     return (
         <div className="container">
             <Head>
-                <title>Hakkımda - Ümit Demir</title>
+                <title>{t.seo.title} - Ümit Demir</title>
                 <link rel="stylesheet" href="/plugins/swiper/css/swiper-bundle.min.css" />
             </Head>
             <Script src="/plugins/swiper/js/swiper-bundle.min.js"  strategy="beforeInteractive"/>
             <Script src="/js/skills.js" strategy="beforeInteractive"/>
             <div className="about_me_container">
                 <div className="about_me__info">
-                    <h2 className="about_me__info--title opacity_anim">About Me</h2>
-                    <p className="about_me__info--desc">
-                        Düzce üniversitesi bilmem ne mezunuyum şunu yaptım bunu yaptım
-                        şunu hallettim falan filan Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Qui itaque dolores harum provident! Quas beatae
-                        quibusdam dolores rem recusandae tempore fuga veritatis dolor
-                        doloribus voluptatibus consectetur, architecto corporis maxime
-                        dolore? Aut, eius sit assumenda sed minus maxime asperiores cumque
-                        architecto dolor. Numquam perferendis illum, modi, tempora sunt
-                        provident adipisci veniam omnis dolor est, incidunt vero eveniet
-                        ducimus inventore nostrum dignissimos.
-                    </p>
+                    <h2 className="about_me__info--title opacity_anim">{t.title}</h2>
+                    {<p dangerouslySetInnerHTML={{__html: t.description}} className="about_me__info--desc"></p>}
                 </div>
                 <div className="about_me__img">
                     <Image src="/images/me.jpg" alt="Ümit Demir" width={460} height={460} />
@@ -56,8 +51,8 @@ const About: NextPage = () => {
             </div>
             <div className="skills">
                 <div className="title_w_sum anim_y_top">
-                    <h2>Kullandığım Teknolojiler</h2>
-                    <span>Kişisel veya projelerimde kullandığım teknolojik araçlar</span>
+                    <h2>{t.skills.title}</h2>
+                    <span>{t.skills.desc}</span>
                 </div>
                 <div className="skills__info anim_y_top">
                     <div className="skills__info--techs" id="tech_wrapper">
@@ -71,102 +66,70 @@ const About: NextPage = () => {
                     <div className="skills__info--summary" id="skills_info_wrapper">
                         <div className="content active" data-content={1}>
                             <h4 className="summary_title">Django</h4>
-                            <p>
-                                Django, python tabanlı full stack web uygulamaları yapmaya yarayan kütüphanedir.
-                                Ben djangoyu Alışkanlık için değil deneyim için kullanıyorum.
-                                minima sapiente itaque, quos quam suscipit corporis
-                                exercitationem accusamus enim architecto mollitia sit excepturi
-                                reiciendis quia repudiandae dignissimos! Placeat, rem.
-                                Doloribus.
+                            <p dangerouslySetInnerHTML={{__html: t.skills.techs.django}}>
+
                             </p>
                         </div>
                         <div className="content" data-content={2}>
                             <h4 className="summary_title">React</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-                                minima sapiente itaque, quos quam suscipit corporis
-                                exercitationem accusamus enim architecto mollitia sit excepturi
-                                reiciendis quia repudiandae dignissimos! Placeat, rem.
-                                Doloribus.
+                            <p dangerouslySetInnerHTML={{__html: t.skills.techs.react}}>
+
                             </p>
                         </div>
                         <div className="content" data-content={3}>
-                            <h4 className="summary_title">Django</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-                                minima sapiente itaque, quos quam suscipit corporis
-                                exercitationem accusamus enim architecto mollitia sit excepturi
-                                reiciendis quia repudiandae dignissimos! Placeat, rem.
-                                Doloribus.
+                            <h4 className="summary_title">Typescript</h4>
+                            <p dangerouslySetInnerHTML={{__html: t.skills.techs.typescript}}>
+
                             </p>
                         </div>
                         <div className="content" data-content={4}>
-                            <h4 className="summary_title">React</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-                                minima sapiente itaque, quos quam suscipit corporis
-                                exercitationem accusamus enim architecto mollitia sit excepturi
-                                reiciendis quia repudiandae dignissimos! Placeat, rem.
-                                Doloribus.
+                            <h4 className="summary_title">Vue</h4>
+                            <p dangerouslySetInnerHTML={{__html: t.skills.techs.vue}}>
+
                             </p>
                         </div>
                         <div className="content" data-content={5}>
-                            <h4 className="summary_title">React</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-                                minima sapiente itaque, quos quam suscipit corporis
-                                exercitationem accusamus enim architecto mollitia sit excepturi
-                                reiciendis quia repudiandae dignissimos! Placeat, rem.
-                                Doloribus.
-                            </p>
+                            <h4 className="summary_title">Flutter</h4>
+                            <p dangerouslySetInnerHTML={{__html: t.skills.techs.flutter}}></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="features_container">
                 <div className="title_w_sum anim_y_top">
-                    <h2>İlgi Alanlarım</h2>
-                    <span>Profesyonel ve Hobi amaçlı ilgilendiğim bazı teknolojiler</span>
+                    <h2>{t.interested.title}</h2>
+                    <span>{t.interested.desc}</span>
                 </div>
                 <div className="features">
                     <div className="feature__item from_left opacity_anim">
                         <img src="svg/features/backend.svg" alt="Backend" />
                         <div className="feature__item--info">
-                            <h3>Backend</h3>
-                            <p>
-                                Web siteleri ve mobil uygulamalar için API ve backend servisi
+                            <h3>{t.interested.interesteds.backend.title}</h3>
+                            <p dangerouslySetInnerHTML={{__html: t.interested.interesteds.backend.desc}}>
                             </p>
                         </div>
                     </div>
                     <div className="feature__item from_right opacity_anim">
                         <img src="svg/features/frontend.svg" alt="Frontend" />
                         <div className="feature__item--info">
-                            <h3>Frontend</h3>
-                            <p>
-                                Access is given 24 hours a full morning to night and meet
-                                again in the morning, giving you comfort when you need data
-                                when urgent.
+                            <h3>{t.interested.interesteds.frontend.title}</h3>
+                            <p dangerouslySetInnerHTML={{__html: t.interested.interesteds.frontend.desc}}>
                             </p>
                         </div>
                     </div>
                     <div className="feature__item from_left opacity_anim">
                         <img src="svg/features/mobile.svg" alt="Mobile" />
                         <div className="feature__item--info">
-                            <h3>Mobile Apps</h3>
-                            <p>
-                                Print out service gives you convenience if someday you need
-                                print data, just edit it all and just print it.
+                            <h3>{t.interested.interesteds.mobile.title}</h3>
+                            <p dangerouslySetInnerHTML={{__html: t.interested.interesteds.mobile.desc}}>
                             </p>
                         </div>
                     </div>
                     <div className="feature__item from_right opacity_anim">
                         <img src="svg/features/devops.svg" alt="Devops" />
                         <div className="feature__item--info">
-                            <h3>Devops</h3>
-                            <p>
-                                Data Security is one of our best facilities. Allows for your
-                                files to be safer. The file can be secured with a code or
-                                password that you created, so only you can open the file.
+                            <h3>{t.interested.interesteds.devops.title}</h3>
+                            <p dangerouslySetInnerHTML={{__html: t.interested.interesteds.devops.desc}}>
                             </p>
                         </div>
                     </div>

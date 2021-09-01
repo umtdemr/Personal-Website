@@ -2,9 +2,19 @@ import React from 'react'
 import Link from "next/link"
 import ChangeLangBtn from '../../translate/change-lang-btn';
 
+import { useRouter } from "next/router";
+
+import tr from "../../../locales/tr";
+import en from "../../../locales/en";
+
 declare var toggleMobileMenu: () => void;
 
 const MobileHeader: React.FC = () => {
+
+  const router = useRouter();
+  const { locale } = router;
+
+  const t = locale === "tr" ? tr : en;
     return (
         <>
         <div className="mobile_menu--overlay"></div>
@@ -23,13 +33,18 @@ const MobileHeader: React.FC = () => {
                 <li><a href="#" onClick={() => toggleMobileMenu()}>Blog</a></li>
                 <li>
                   <Link href="/about" passHref>
-                    <a className="active" onClick={() => toggleMobileMenu()}>Hakkımda</a>
+                    <a className="active" onClick={() => toggleMobileMenu()}>{t.about}</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" passHref>
+                    <a className="active" onClick={() => toggleMobileMenu()}>{t.contact}</a>
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
-          <ChangeLangBtn isMobile/>
+          <ChangeLangBtn />
         </div>
         </>
     )
