@@ -3,7 +3,7 @@ module.exports = {
   reactStrictMode: true,
   distDir: 'build',
   i18n: {
-    locales: ['en', 'tr'],
+    locales: ['tr', 'en'],
     defaultLocale: 'tr',
   },
   env: {

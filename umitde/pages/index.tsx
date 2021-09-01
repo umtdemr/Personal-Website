@@ -2,19 +2,28 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import tr from "../locales/tr"
+import en from "../locales/en"
+
+
+import { useRouter } from 'next/router'
+
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+  const router = useRouter();
+  const { locale } = router;
+
+  const t = locale === "tr" ? tr : en;
   return (
     <div className="container">
       <div className="header--info">
         <div className="info--left animate__animated animate__fadeInUp">
-          <h1 className="">Software Developer</h1>
-          <p>
-            Merhaba, ben Ümit,<br />
-            2016&apos;dan bu yana full stack web developer olma yolunda ilerliyorum. Bunun yanında hobi amaçlı mobil kodlamaya da ilgim bulunmakta.
-            2019&apos;un mart ayından beri part time full stack web developer pozisyonunda çalışıyorum.
-          </p>
+          <h1 className="">{t.home_title}</h1>
+          {
+            (<p dangerouslySetInnerHTML={{__html: t.home_description}}></p>)
+          }
           <Link href="/about" passHref>
             <a href="#" className="purple_button">Dahasını Öğren</a>
           </Link>
@@ -26,5 +35,7 @@ const Home: NextPage = () => {
     </div>
   )
 }
+
+
 
 export default Home
