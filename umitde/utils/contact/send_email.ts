@@ -36,6 +36,11 @@ export default async function send_email(
     .finally(() => {
       setIsLoading(false);
       setTimeout(() => {
+        form_container.scrollIntoView(
+          { block: "end", inline: "nearest", behavior: "smooth" }
+        )
+      }, 900);
+      setTimeout(() => {
         success_container.classList.remove("active");
         error_container.classList.remove("active");
       }, 11500);
