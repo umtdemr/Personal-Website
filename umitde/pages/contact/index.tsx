@@ -88,6 +88,18 @@ const Contact: NextPage = () => {
           parent.classList.remove("has-focus");
         });
       })
+      
+      return () => {
+        listOfEls.forEach(elItem => {
+          const parent = elItem.parentElement!;
+          elItem.removeEventListener('focus', () => {
+            parent.classList.add("has-focus");
+          });
+          elItem.removeEventListener('blur', () => {
+            parent.classList.remove("has-focus");
+          });
+        });
+      }
     }, []);
 
     useEffect(() => {

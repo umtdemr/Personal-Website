@@ -3,6 +3,7 @@ import Link from "next/link";
 import Script from "next/script"
 import Head from "next/head";
 import Image from "next/image"
+import { useRouter } from "next/router"
 
 import { useEffect } from "react";
 
@@ -16,6 +17,7 @@ import runAboutAnims from "../../utils/about/gsap_anim";
 gsap.registerPlugin(ScrollTrigger);
 
 const About: NextPage = () => {
+    const router = useRouter();
     useEffect(() => {
        
         runAboutAnims();
@@ -170,9 +172,18 @@ const About: NextPage = () => {
                     </div>
                 </div>
             </div>
-            <Link href="/contact" passHref >
-                <a href="#" className="white_button about_contact_btn">İletişime Geç</a>
-            </Link>
+            <a 
+                href="#" 
+                className="white_button about_contact_btn"
+                onClick={() => { router.push("/contact").then(() =>
+                    setTimeout(() => {
+                        document.querySelector(".form_container")?.scrollIntoView(
+                            {block: "end", inline: "nearest", behavior: "smooth"}
+                        )
+                    }, 400)
+                    )}
+                }
+            >İletişime Geç</a>
         </div>
 
     )
