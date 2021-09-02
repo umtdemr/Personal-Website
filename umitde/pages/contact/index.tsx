@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import Head from "next/head"
 import { useRouter } from "next/router";
 import React, { ChangeEvent, useRef, useState, useEffect, FormEvent, createRef} from 'react'
 import ReCAPTCHA from "react-google-recaptcha";
@@ -156,6 +157,9 @@ const Contact: NextPage = () => {
         <>
         <div className="gradient_bg"></div>
         <div className="contact_page">
+          <Head>
+            <title>{t.seo.title} - Ümit Demir</title>
+          </Head>
           <div className="contact_header">
             <div className="skewed_container">
               <div className="gradient"></div>
