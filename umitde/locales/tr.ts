@@ -1,6 +1,7 @@
 const tr = {
     about: "Hakkımda",
-    contact: "İletişim"
+    contact: "İletişim",
+    portfolio: "Portfolyo",
 }
 
 

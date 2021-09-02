@@ -1,6 +1,7 @@
 const en = {
     about: "About Me",
-    contact: "Contact"
+    contact: "Contact",
+    portfolio: "Portfolio",
 }
 
 export default en;

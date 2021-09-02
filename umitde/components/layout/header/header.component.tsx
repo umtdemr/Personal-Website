@@ -28,6 +28,9 @@ const Header: React.FC = () => {
                                 <Link href="/about">{t.about}</Link>
                             </li>
                             <li>
+                                <Link href="/portfolio">{t.portfolio}</Link>
+                            </li>
+                            <li>
                                 <Link href="/contact">{t.contact}</Link>
                             </li>
                         </ul>
