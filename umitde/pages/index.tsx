@@ -30,9 +30,19 @@ const Home: NextPage = () => {
           {
             (<p dangerouslySetInnerHTML={{__html: t.description}}></p>)
           }
-          <Link href="/about" passHref>
-            <a href="#" className="purple_button">{t.btn_title}</a>
-          </Link>
+          <a 
+            className="purple_button"
+            onClick={() => 
+              router.push("/about")
+                .then(() => {
+                  setTimeout(() => {
+                      document.querySelector(".about_me__info--title")?.scrollIntoView(
+                          {block: "end", inline: "nearest", behavior: "smooth"}
+                      )
+                  }, 400)
+                })
+            }
+            >{t.btn_title}</a>
         </div>
         <div className="info--right">
           <Image src="/svg/develop.svg" alt="Thats me" width="1076" height="755"/>

@@ -117,3 +117,7 @@ input, select, textarea {
   display: block;
   width: 202px;
 }
+
+.footer_logo{
+  cursor: pointer;
+}

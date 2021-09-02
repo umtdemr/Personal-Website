@@ -1,8 +1,11 @@
 import Link from 'next/link';
 import React from 'react'
 
+import { useRouter } from "next/router";
+
 
 const Footer: React.FC = () => {
+  const router = useRouter();
     return (
         <>
         <footer>
@@ -10,9 +13,19 @@ const Footer: React.FC = () => {
             <div className="container">
                 <div className="footer_container">
                     <div className="footer_left">
-                        <Link href="/" passHref>
-                            <a className="footer_logo logo">umitde<span className="logo--faded">mir</span></a>
-                        </Link>
+                        <a 
+                          className="footer_logo logo"
+                          onClick={() => 
+                            router.push("/")
+                              .then(() => {
+                                setTimeout(() => {
+                                    document.querySelector(".header--top")?.scrollIntoView(
+                                        {block: "end", inline: "nearest", behavior: "smooth"}
+                                    )
+                                }, 400)
+                              })
+                          }
+                          >umitde<span className="logo--faded">mir</span></a>
                     </div>
                     <div className="footer_right">
                         <div className="socials">
