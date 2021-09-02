@@ -7,6 +7,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { ValidType, ValidInputs, MailData, CaptchaVerify } from "../../types/contact.types";
 import send_email from "../../utils/contact/send_email";
 
+import runContactAnims from "../../utils/contact/gsap_anims";
 import tr from "../../locales/contact/tr"
 import en from "../../locales/contact/en"
 
@@ -99,6 +100,7 @@ const Contact: NextPage = () => {
         });
       })
       
+      runContactAnims();
       return () => {
         listOfEls.forEach(elItem => {
           const parent = elItem.parentElement!;
