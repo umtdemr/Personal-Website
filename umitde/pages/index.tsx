@@ -20,7 +20,7 @@ const Home: NextPage = () => {
     <div className="container">
       <div className="header--info">
         <div className="info--left animate__animated animate__fadeInUp">
-          <h1 className="">{t.title}</h1>
+          <h1 dangerouslySetInnerHTML={{__html: t.title}}></h1>
           {
             (<p dangerouslySetInnerHTML={{__html: t.description}}></p>)
           }

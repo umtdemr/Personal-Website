@@ -46,7 +46,7 @@ const tr = {
     },
     contact_btn_text: "İletişime Geç",
     seo: {
-        title: "Hakkımda"
+        title: "Hakkımda",
     }
 }
 
