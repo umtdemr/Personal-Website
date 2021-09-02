@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 import tr from "../locales/home/tr"
 import en from "../locales/home/en"
@@ -10,12 +11,17 @@ import en from "../locales/home/en"
 import { useRouter } from 'next/router'
 
 import styles from '../styles/Home.module.css'
+import runHomeAnims from '../utils/home/gsap_anims'
 
 const Home: NextPage = () => {
   const router = useRouter();
   const { locale } = router;
 
   const t = locale === "tr" ? tr : en;
+
+  useEffect(() => {
+    runHomeAnims();
+  }, [])
   return (
     <div className="container">
       <div className="header--info">
