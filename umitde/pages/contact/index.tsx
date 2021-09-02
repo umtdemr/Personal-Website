@@ -1,10 +1,15 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React, { ChangeEvent, useRef, useState, useEffect, FormEvent, createRef} from 'react'
 import ReCAPTCHA from "react-google-recaptcha";
 
 import { ValidType, ValidInputs, MailData, CaptchaVerify } from "../../types/contact.types";
 import send_email from "../../utils/contact/send_email";
+
+import tr from "../../locales/contact/tr"
+import en from "../../locales/contact/en"
+
 
 
 const Contact: NextPage = () => {
@@ -24,6 +29,11 @@ const Contact: NextPage = () => {
     const [isValid, setIsValid] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const recaptchaRef = createRef<ReCAPTCHA>();
+
+    const router = useRouter();
+    const { locale } = router;
+
+    const t = locale === "tr" ? tr : en;
 
 
     const nameEl = useRef<HTMLInputElement>(null);
@@ -149,7 +159,7 @@ const Contact: NextPage = () => {
               <div className="gradient"></div>
             </div>
             <div className="headline">
-              <h1>Contact With Me</h1>
+              <h1>{t.title}</h1>
             </div>
           </div>
           <section className="contact_form_section">
@@ -165,34 +175,34 @@ const Contact: NextPage = () => {
 
                   <fieldset>
                     <div className="form_group">
-                      <label htmlFor="name">Ad</label>
+                      <label htmlFor="name">{t.form.name.title}</label>
                       <input 
                         type="text" 
                         id="name" 
                         name="name" 
-                        placeholder="Jane"
+                        placeholder={t.form.name.placeholder}
                         value={name} 
                         onChange={(e) => handleName(e)}
                         ref={nameEl}
                         required />
                     </div>
                     <div className="form_group">
-                      <label htmlFor="email">E-Posta</label>
+                      <label htmlFor="email">{t.form.email.title}</label>
                       <input 
                         type="email" 
                         id="email" 
                         name="email" 
-                        placeholder="jane.doe@gmail.com"
+                        placeholder={t.form.email.placeholder}
                         onChange={(e) => handleMail(e)}
                         ref={emailEl}
                         required />
                     </div>
                     <div className="form_group">
-                      <label htmlFor="message">Mesaj</label>
+                      <label htmlFor="message">{t.form.message.title}</label>
                       <textarea 
                         name="message"
                         id="message"
-                        placeholder="Selam Ümit, ... hakkında yazıyorum..." 
+                        placeholder={t.form.message.placeholder}
                         onChange={(e) => handleMessage(e)}
                         ref={messageEl}
                         required></textarea>
@@ -206,38 +216,37 @@ const Contact: NextPage = () => {
                       { isLoading && 
                         <>
                        <i className="fa fa-circle-notch fa-spin"></i> &nbsp; </> }
-                      Gönder</button>
+                      {t.form.button.title}</button>
                 </form>
                 <div className="form_message">
                   <div className="success">
                     <Image src="/images/success.png" width={150} height={150} alt="Mesaj başarıyla gönderildi"/>
-                    <span className='message'>Mesajın alındı. En yakın sürede görüşmek gözere</span>
+                    <span className='message'>{t.form.message.success}</span>
                   </div>
                   <div className="error">
                     <Image src="/images/error.png" width={150} height={150} alt="Mesaj gönderilirken bir hata oluştu"/>
                     <span className='message'>
-                      Mesajın gönderilirken hata meydana geldi.
-                      Lütfen daha sonra tekrar dene ya da <a href="mailto:umitde296@gmail.com">umitde296@gmail.com</a> adresinden bana mail atmayı dene.
+                      {<span dangerouslySetInnerHTML={{__html: t.form.message.error.motivate}}></span>}
                       <br />
-                      Hata mesajı: {errMsg}</span>
+                      {t.form.message.error.message} {errMsg}</span>
                   </div>
                 </div>
               </div>
             </div>
             <div className="secondary_column">
               <div className="why-me">
-                <h2 className="why-me--title">İletişime Geç</h2>
+                <h2 className="why-me--title">{t.motivate.title}</h2>
                 <ul className="why-me--list">
-                  <li>Sadece bir merhaba demek için</li>
-                  <li>Freelance destek için</li>
-                  <li>herhangi bir şey için</li>
+                  <li>{t.motivate.first}</li>
+                  <li>{t.motivate.second}</li>
+                  <li>{t.motivate.last}</li>
                 </ul>
               </div>
             </div>
           </section>
           <section className="contact_bottom">
             <div className="container">
-              <p>Form doldurmak istemiyorsan <a href="mailto:umitde296@gmail.com">umitde296@gmail.com</a> adresinden bana ulaşabilirsin.</p>
+              <p dangerouslySetInnerHTML={{__html: t.motivate.bottom}}></p>
             </div>
           </section>
         </div>
