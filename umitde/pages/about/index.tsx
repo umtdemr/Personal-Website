@@ -140,7 +140,7 @@ const About: NextPage = () => {
                 className="white_button about_contact_btn"
                 onClick={() => { router.push("/contact").then(() =>
                     setTimeout(() => {
-                        document.querySelector(".form_container")?.scrollIntoView(
+                        document.querySelector(".headline")?.scrollIntoView(
                             {block: "end", inline: "nearest", behavior: "smooth"}
                         )
                     }, 400)
