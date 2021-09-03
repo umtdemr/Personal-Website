@@ -1,55 +1,60 @@
 const en = {
-    title: "Hakkımda",
-    description: "Düzce üniversitesi bilmem ne mezunuyum şunu yaptım bunu yaptım şunu hallettim falan filan Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui itaque dolores harum provident! Quas beatae quibusdam dolores rem recusandae tempore fuga veritatis dolor doloribus voluptatibus consectetur, architecto corporis maxime dolore? Aut, eius sit assumenda sed minus maxime asperiores cumque architecto dolor. Numquam perferendis illum, modi, tempora sunt provident adipisci veniam omnis dolor est, incidunt vero eveniet ducimus inventore nostrum dignissimos.",
+    title: "About me",
+    description: `
+    Hello, I'm Umit.<br />
+    I am currently studying Computer Engineering at Düzce University. <br />I have been working as a part time full stack web developer since March 2019.
+    Now I think I've reached enough competence to get your freelance jobs 😉
+    `,
     skills: {
-        title: "Kullandığım Teknolojiler",
-        desc: "Kişisel veya projelerimde kullandığım teknolojik araçlar",
+        title: "Technologies that i have used",
+        desc: "Technologies that i have used for my personal jobs or freelance jobs",
         techs: {
             django: `
-            Django, python tabanlı full stack web uygulamaları yapmaya yarayan kütüphanedir. Ben djangoyu Alışkanlık için değil deneyim için kullanıyorum. minima sapiente itaque, quos quam suscipit corporis exercitationem accusamus enim architecto mollitia sit excepturi reiciendis quia repudiandae dignissimos! Placeat, rem. Doloribus.
+            Django is a Python-based free and open-source web framework that follows the model–template–views architectural pattern. It is maintained by the Django Software Foundation, an American independent organization established as a 501 non-profit.
             `,
             react: `
-            Django, python tabanlı full stack web uygulamaları yapmaya yarayan kütüphanedir. Ben djangoyu Alışkanlık için değil deneyim için kullanıyorum. minima sapiente itaque, quos quam suscipit corporis exercitationem accusamus enim architecto mollitia sit excepturi reiciendis quia repudiandae dignissimos! Placeat, rem. Doloribus.
+            React is a free and open-source front-end JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications.
             `,
             flutter: `
-            Django, python tabanlı full stack web uygulamaları yapmaya yarayan kütüphanedir. Ben djangoyu Alışkanlık için değil deneyim için kullanıyorum. minima sapiente itaque, quos quam suscipit corporis exercitationem accusamus enim architecto mollitia sit excepturi reiciendis quia repudiandae dignissimos! Placeat, rem. Doloribus.
+            Flutter is an open-source UI software development kit created by Google. It is used to develop cross platform applications for Android, iOS, Linux, Mac, Windows, Google Fuchsia, and the web from a single codebase. The first version of Flutter was known as codename "Sky" and ran on the Android operating system.
             `,
             vue: `
-            Django, python tabanlı full stack web uygulamaları yapmaya yarayan kütüphanedir. Ben djangoyu Alışkanlık için değil deneyim için kullanıyorum. minima sapiente itaque, quos quam suscipit corporis exercitationem accusamus enim architecto mollitia sit excepturi reiciendis quia repudiandae dignissimos! Placeat, rem. Doloribus.
+            Vue.js is an open-source model–view–viewmodel front end JavaScript framework for building user interfaces and single-page applications. It was created by Evan You, and is maintained by him and the rest of the active core team members. 
             `,
             typescript: `
-            Django, python tabanlı full stack web uygulamaları yapmaya yarayan kütüphanedir. Ben djangoyu Alışkanlık için değil deneyim için kullanıyorum. minima sapiente itaque, quos quam suscipit corporis exercitationem accusamus enim architecto mollitia sit excepturi reiciendis quia repudiandae dignissimos! Placeat, rem. Doloribus.
+            TypeScript is a programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language. TypeScript is designed for the development of large applications and transcompiles to JavaScript.
             `,
         }
     },
     interested: {
-        title: "İlgi Alanlarım",
-        desc: "Profesyonel ve Hobi amaçlı ilgilendiğim bazı teknolojiler",
+        title: "My interests",
+        desc: "Some technologies that I am interested in for professional and hobby purposes",
         interesteds: {
             backend: {
                 title: "Backend",
-                desc: "Web siteleri ve mobil uygulamalar için API ve backend servisi"
+                desc: "API and backend service for websites and mobile applications",
             },
             frontend: {
-                title: "Backend",
-                desc: "Web siteleri ve mobil uygulamalar için API ve backend servisi"
+                title: "Frontend",
+                desc: "Interactive UI / UX with backend"
             },
             mobile: {
-                title: "Backend",
-                desc: "Web siteleri ve mobil uygulamalar için API ve backend servisi"
+                title: "Mobile Apps",
+                desc: "Mobile apps for android and ios written with Flutter"
             },
             devops: {
-                title: "Backend",
-                desc: "Web siteleri ve mobil uygulamalar için API ve backend servisi"
+                title: "Devops",
+                desc: "Technologies required to manage the whole process, CI / CD, clouds and docker"
             },
         }
     },
-    contact_btn_text: "İletişime Geç",
+    contact_btn_text: "Contact with me",
     seo: {
         title: "About Me"
     },
     job: {
-        title: "Intentionally Concealed",
+        t_title: "What they say about me",
+        title: "Intentionally concealed",
         message: "I don&apos;t know who the hell is Umit."
     }
 }

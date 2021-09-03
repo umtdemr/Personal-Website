@@ -121,3 +121,9 @@ input, select, textarea {
 .footer_logo{
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .about_me__img{
+    margin-top: 30px;
+  }
+}

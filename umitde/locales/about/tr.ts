@@ -1,24 +1,28 @@
 const tr = {
     title: "Hakkımda",
-    description: "Düzce üniversitesi bilmem ne mezunuyum şunu yaptım bunu yaptım şunu hallettim falan filan Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui itaque dolores harum provident! Quas beatae quibusdam dolores rem recusandae tempore fuga veritatis dolor doloribus voluptatibus consectetur, architecto corporis maxime dolore? Aut, eius sit assumenda sed minus maxime asperiores cumque architecto dolor. Numquam perferendis illum, modi, tempora sunt provident adipisci veniam omnis dolor est, incidunt vero eveniet ducimus inventore nostrum dignissimos.",
+    description: `
+        Merhaba, ben Ümit.<br />
+        Şuanda Düzce Üniversitesinde Bilgisayar Mühendisliği okuyorum. <br />2019'un mart ayından beri part time full stack web developer olarak çalışıyorum.
+        Artık freelance işlerinizi alabileceğim kadar yetkinliğe ulaştığımı düşünüyorum 😉
+    `,
     skills: {
-        title: "Kullandığım Teknolojiler",
+        title: "Kullandığım teknolojiler",
         desc: "Kişisel veya projelerimde kullandığım teknolojik araçlar",
         techs: {
             django: `
-            Django, python tabanlı full stack web uygulamaları yapmaya yarayan kütüphanedir. Ben djangoyu Alışkanlık için değil deneyim için kullanıyorum. minima sapiente itaque, quos quam suscipit corporis exercitationem accusamus enim architecto mollitia sit excepturi reiciendis quia repudiandae dignissimos! Placeat, rem. Doloribus.
+            Python Programlama Dili için hazırlanmış ve BSD lisansı ile lisanslanmış yüksek seviyeli bir web çatısıdır. Basit kurulumu ve kullanımı, detaylı hata raporu sayfaları ve sunduğu yeni arayüz kodlama yöntemleriyle diğer sunucu yazılımı ve çatılardan kendini ayırmaktadır.
             `,
             react: `
-            Django, python tabanlı full stack web uygulamaları yapmaya yarayan kütüphanedir. Ben djangoyu Alışkanlık için değil deneyim için kullanıyorum. minima sapiente itaque, quos quam suscipit corporis exercitationem accusamus enim architecto mollitia sit excepturi reiciendis quia repudiandae dignissimos! Placeat, rem. Doloribus.
+            Kullanıcı arayüzü oluşturmaya yarayan açık kaynak kodlu bir javascript kütüphanesidir. Facebook önderliğinde bir geliştirici grubu tarafından geliştirilmekte olan React, Model-View-Controller prensibine uygun olarak oluşturulmuştur.
             `,
             flutter: `
-            Django, python tabanlı full stack web uygulamaları yapmaya yarayan kütüphanedir. Ben djangoyu Alışkanlık için değil deneyim için kullanıyorum. minima sapiente itaque, quos quam suscipit corporis exercitationem accusamus enim architecto mollitia sit excepturi reiciendis quia repudiandae dignissimos! Placeat, rem. Doloribus.
+            Google tarafından oluşturulan açık kaynaklı bir UI yazılım geliştirme kitidir. Android, iOS, Windows, Mac, Linux ve web için uygulamalar geliştirmek için kullanılıyor. Flutter'ın ilk sürümü "Sky" olarak biliniyordu ve Android işletim sisteminde çalışıyordu.
             `,
             vue: `
-            Django, python tabanlı full stack web uygulamaları yapmaya yarayan kütüphanedir. Ben djangoyu Alışkanlık için değil deneyim için kullanıyorum. minima sapiente itaque, quos quam suscipit corporis exercitationem accusamus enim architecto mollitia sit excepturi reiciendis quia repudiandae dignissimos! Placeat, rem. Doloribus.
+            Kullanıcı arayüzleri ve tek sayfa uygulamalar inşa etmek için kullanılan açık kaynak Javascript iskeleti.
             `,
             typescript: `
-            Django, python tabanlı full stack web uygulamaları yapmaya yarayan kütüphanedir. Ben djangoyu Alışkanlık için değil deneyim için kullanıyorum. minima sapiente itaque, quos quam suscipit corporis exercitationem accusamus enim architecto mollitia sit excepturi reiciendis quia repudiandae dignissimos! Placeat, rem. Doloribus.
+            Özgür ve açık kaynak kodlu programlama dili. Microsoft tarafından geliştirilmekte ve desteklenmekte olan TypeScript; bünyesinde barındırdığı derleyici sayesinde, yazılan kodu JavaScript koduna çevirir. TypeScript gerek istemci taraflı, gerekse sunucu taraflı yazılım geliştirmede kullanılabilmektedir. 
             `,
         }
     },
@@ -31,16 +35,16 @@ const tr = {
                 desc: "Web siteleri ve mobil uygulamalar için API ve backend servisi"
             },
             frontend: {
-                title: "Backend",
-                desc: "Web siteleri ve mobil uygulamalar için API ve backend servisi"
+                title: "Frontend",
+                desc: "Backend ile etkileşimli UI / UX"
             },
             mobile: {
-                title: "Backend",
-                desc: "Web siteleri ve mobil uygulamalar için API ve backend servisi"
+                title: "Mobil Uygulamalar",
+                desc: "Flutter ile android ve ios için mobil uygulamalar"
             },
             devops: {
-                title: "Backend",
-                desc: "Web siteleri ve mobil uygulamalar için API ve backend servisi"
+                title: "Devops",
+                desc: "Tüm süreci yönetmek için gerekli olan teknolojiler, CI / CD, clouds ve docker "
             },
         }
     },
@@ -49,6 +53,7 @@ const tr = {
         title: "Hakkımda",
     },
     job: {
+        t_title: "Hakkımda ne diyorlar",
         title: "Kasıtlı olarak gizlenmiş",
         message: "Ümit kim bilmiyorum dostum"
     }

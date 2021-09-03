@@ -148,7 +148,7 @@ const About: NextPage = () => {
                     }, 400)
                     )}
                 }
-            >İletişime Geç</a>
+            >{t.contact_btn_text}</a>
         </div>
 
     )

@@ -15,7 +15,7 @@ const Testimonials: React.FC = () => {
     return (
         <div className="testimonials_container swiper-container">
         <h2 className="testimonials_container--title" data-aos-anchor-placement="top-bottom">
-        Hakkımda Ne Diyorlar
+        {t.job.t_title}
         </h2>
         <div className="testimonial swiper-wrapper">
             <div className="testimonial__item swiper-slide active">
