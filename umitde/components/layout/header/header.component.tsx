@@ -23,7 +23,7 @@ const Header: React.FC = () => {
                         </Link>
                     <div className="header_last">
                         <ul className="header--top--menu">
-                            <li className="active"><a href="#">Blog</a></li>
+                            <li className="active"><a href="https://medium.com/@umtdemr" target="_blank" rel="noreferrer">Blog</a></li>
                             <li>
                                 <Link href="/about">{t.about}</Link>
                             </li>

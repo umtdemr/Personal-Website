@@ -30,7 +30,7 @@ const MobileHeader: React.FC = () => {
             </div>
             <div className="mobile_menu--menu">
               <ul>
-                <li><a href="#" onClick={() => toggleMobileMenu()}>Blog</a></li>
+                <li><a href="https://medium.com/@umtdemr" target="_blank" rel="noreferrer" onClick={() => toggleMobileMenu()}>Blog</a></li>
                 <li>
                   <Link href="/about" passHref>
                     <a className="active" onClick={() => toggleMobileMenu()}>{t.about}</a>

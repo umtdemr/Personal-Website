@@ -39,16 +39,9 @@ const Footer: React.FC = () => {
                             <a
                             target="_blank"
                             rel="noreferrer"
-                            href="#"
+                            href="https://www.linkedin.com/in/umtdemr/"
                             className="social__item"
                             ><i className="fab fa-linkedin"></i
-                            ></a>
-                            <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href="https://instagram.com/umt.demr/"
-                            className="social__item"
-                            ><i className="fab fa-instagram"></i
                             ></a>
                         </div>
                     </div>
