@@ -1,3 +1,7 @@
+:root {
+  --portfolio-height: 400px;
+}
+
 body, html{
     height: 100%;
 }
@@ -120,6 +124,58 @@ input, select, textarea {
 
 .footer_logo{
   cursor: pointer;
+}
+
+.portfolio_wrapper {
+  margin-top: 140px;
+}
+.portfolio_wrapper--title { 
+  letter-spacing: -2px;
+}
+.portfolio_wrapper--text { 
+  margin-top: 10px;
+}
+.portfolio {
+  margin-top: 80px;
+}
+.portfolio__item {
+  min-height: var(--portfolio-height);
+  position: relative;
+  width: 250px;
+}
+.portfolio__item--img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+}
+.portfolio__item--overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #212353;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  border-radius: 7px;
+}
+.portfolio__item--title, .portfolio__item--end, .portfolio__item a {
+  display: block;
+  position: relative;
+  z-index: 1;
+  padding: 0 10px;
+  color: #fff;
+}
+.portfolio__item--title {
+  padding-top: 20px;
+  font-family: Helvetica,sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+.portfolio__item a{
+  color: #fff;
+  top: calc(var(--portfolio-height) - 90px);
 }
 
 @media screen and (max-width: 768px) {
