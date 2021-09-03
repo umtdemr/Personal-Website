@@ -47,6 +47,10 @@ const tr = {
     contact_btn_text: "İletişime Geç",
     seo: {
         title: "Hakkımda",
+    },
+    job: {
+        title: "Kasıtlı olarak gizlenmiş",
+        message: "Ümit kim bilmiyorum dostum"
     }
 }
 

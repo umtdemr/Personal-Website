@@ -15,6 +15,7 @@ import runJs from "../../utils/about/run";
 import runAboutAnims from "../../utils/about/gsap_anim";
 import tr from "../../locales/about/tr"
 import en from "../../locales/about/en"
+import Testimonials from "../../components/testimonials/testimonials.component";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -135,6 +136,7 @@ const About: NextPage = () => {
                     </div>
                 </div>
             </div>
+            <Testimonials />
             <a 
                 href="#" 
                 className="white_button about_contact_btn"

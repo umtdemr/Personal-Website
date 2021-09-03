@@ -47,6 +47,10 @@ const en = {
     contact_btn_text: "İletişime Geç",
     seo: {
         title: "About Me"
+    },
+    job: {
+        title: "Intentionally Concealed",
+        message: "I don&apos;t know who the hell is Umit."
     }
 }
 
