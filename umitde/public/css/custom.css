@@ -1,5 +1,5 @@
 :root {
-  --portfolio-height: 400px;
+  --portfolio-height: 300px;
 }
 
 body, html{
@@ -131,26 +131,36 @@ input, select, textarea {
 }
 .portfolio_wrapper--title { 
   letter-spacing: -2px;
+  text-align: center;
 }
 .portfolio_wrapper--text { 
   margin-top: 10px;
+  text-align: center;
 }
 .portfolio {
-  margin-top: 80px;
+  margin-top: 130px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .portfolio__item {
   min-height: var(--portfolio-height);
   position: relative;
   width: 250px;
-  margin-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 .portfolio__item--img {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 120%;
+  height: 120%;
   object-fit: cover;
   border-radius: 7px;
+  transition: 300ms all ease-in;
+  max-width: 200%;
+  left: -10%;
+  top: -10%;
 }
 .portfolio__item--overlay {
   position: absolute;
@@ -192,23 +202,50 @@ input, select, textarea {
   top: calc(var(--portfolio-height) - 90px);
 }
 
-.portfolio__item:nth-child(1) {
-  min-height: 420px;
+.portfolio__item:hover .portfolio__item--img {
+  transform: scale(.9);
 }
-.portfolio__item:nth-child(2) {
-  min-height: 400px;
+.portfolio__item--group.last {
+  margin-top: 50px;
+  margin-left: 20px;
 }
-.portfolio__item:nth-child(3) {
-  min-height: 420px;
+.portfolio__item--group.second {
+  margin-left: 20px;
+  margin-top: -50px;
 }
-.portfolio__item:nth-child(4) {
-  min-height: 400px;
+
+@media screen and (min-width: 567px) and (max-width: 842px) {
+  .portfolio__item--group.last {
+    display: flex;
+    margin-left: 0px;
+    justify-content: space-between;
+  }
+  .portfolio__item--group.last .portfolio__item:nth-child(1) {
+    margin-top: -50px;
+  }
+  .portfolio__item--group.last .portfolio__item:nth-child(2) {
+    margin-top: -100px;
+    margin-left: 20px;
+  }
 }
-.portfolio__item:nth-child(5) {
-  min-height: 500px;
-}
-.portfolio__item:nth-child(6) {
-  min-height: 200px;
+@media screen and (max-width: 578px) {
+  .portfolio {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .portfolio__item--group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .portfolio__item--group.last {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .portfolio__item--group.second {
+    margin-left: 0;
+    margin-top: 0;
+  } 
 }
 
 @media screen and (max-width: 768px) {
