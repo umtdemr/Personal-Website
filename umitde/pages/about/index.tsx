@@ -25,21 +25,20 @@ const About: NextPage = () => {
 
     const t = locale === "tr" ? tr : en;
     useEffect(() => {
-       
         runAboutAnims();
-        // runJs();
         if (typeof window !== "undefined") {
           runJs();
         }
+        // runJs();
     }, [])
     return (
         <div className="container">
+            <Script src="/plugins/swiper/js/swiper-bundle.min.js" />
+            <Script src="/js/skills.js" />
             <Head>
                 <title>{t.seo.title} - Ümit Demir</title>
                 <link rel="stylesheet" href="/plugins/swiper/css/swiper-bundle.min.css" />
             </Head>
-            <Script src="/plugins/swiper/js/swiper-bundle.min.js"  strategy="beforeInteractive"/>
-            <Script src="/js/skills.js" strategy="beforeInteractive"/>
             <div className="about_me_container">
                 <div className="about_me__info">
                     <h2 className="about_me__info--title opacity_anim">{t.title}</h2>
