@@ -30,25 +30,25 @@ export default async function contact(
     `;
 
 
-    // let transporter = nodemailer.createTransport({
-    //     host: "smtp.yandex.ru",
-    //     port: 587,
-    //     secure: false, // true for 465, false for other ports
-    //     auth: {
-    //         user: process.env.mail_acc, // generated ethereal user
-    //         pass: process.env.mail_password, // generated ethereal password
-    //     },
-    // });
-
     let transporter = nodemailer.createTransport({
-        host: "smtp.ethereal.email",
+        host: "smtp.yandex.ru",
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-            user: testAccount.user, // generated ethereal user
-            pass: testAccount.pass, // generated ethereal password
+            user: process.env.mail_acc, // generated ethereal user
+            pass: process.env.mail_password, // generated ethereal password
         },
     });
+
+    // let transporter = nodemailer.createTransport({
+    //     host: "smtp.ethereal.email",
+    //     port: 587,
+    //     secure: false, // true for 465, false for other ports
+    //     auth: {
+    //         user: testAccount.user, // generated ethereal user
+    //         pass: testAccount.pass, // generated ethereal password
+    //     },
+    // });
 
     const messageHtml = `
         <div>

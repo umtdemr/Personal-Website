@@ -226,11 +226,11 @@ const Contact: NextPage = () => {
                 </form>
                 <div className="form_message">
                   <div className="success">
-                    <Image src="/images/success.png" width={150} height={150} alt="Mesaj başarıyla gönderildi"/>
+                    <Image src="/images/success.png" width={202} height={202} alt="Mesaj başarıyla gönderildi"/>
                     <span className='message'>{t.form.message.success}</span>
                   </div>
                   <div className="error">
-                    <Image src="/images/error.png" width={150} height={150} alt="Mesaj gönderilirken bir hata oluştu"/>
+                    <Image src="/images/error.png" width={202} height={202} alt="Mesaj gönderilirken bir hata oluştu"/>
                     <span className='message'>
                       {<span dangerouslySetInnerHTML={{__html: t.form.message.error.motivate}}></span>}
                       <br />
