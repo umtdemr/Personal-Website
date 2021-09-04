@@ -1,3 +1,5 @@
+import { useEffect } from "react"
+
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -7,12 +9,17 @@ import Masonry from "react-masonry-component"
 
 import tr from "../../locales/portfolio/tr"
 import en from "../../locales/portfolio/en"
+import runPortfolioAnims from "../../utils/portfolio/gsap_anim";
 
 
 const Portfolio: NextPage = () => {
   const { locale } = useRouter()
 
   const t = locale === "tr" ? tr : en
+
+  useEffect(() => {
+    runPortfolioAnims();
+  }, []);
 
   return (
     <div className="container">
