@@ -12,6 +12,12 @@ body, html{
 .content {
     flex: 1 0 auto;
 }
+.header--top--menu li a, .header--top .white_button {
+  transition: 300ms opacity;
+}
+.header--top--menu li a:hover, .header--top .white_button:hover{
+  opacity: .7;
+}
 
 .testimonial__item {
     position: relative;
