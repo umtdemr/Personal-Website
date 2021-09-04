@@ -33,8 +33,8 @@ const About: NextPage = () => {
     }, [])
     return (
         <div className="container">
-            <Script src="/plugins/swiper/js/swiper-bundle.min.js" />
-            <Script src="/js/skills.js" />
+            <Script src="/plugins/swiper/js/swiper-bundle.min.js" strategy="beforeInteractive"/>
+            <Script src="/js/skills.js" strategy="beforeInteractive" />
             <Head>
                 <title>{t.seo.title} - Ümit Demir</title>
                 <link rel="stylesheet" href="/plugins/swiper/css/swiper-bundle.min.css" />

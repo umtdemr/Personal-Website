@@ -2,8 +2,6 @@ declare var Swiper: any;
 declare var Skills: any;
 
 const runJs = () => {
-  document.addEventListener('readystatechange', function(event) {
-    if (document.readyState === "complete") {
       setTimeout(() => {
       var SwiperConf = new Swiper('.swiper-container', {
         // Optional parameters
@@ -52,9 +50,7 @@ const runJs = () => {
       var skills_wrapper = document.getElementById("tech_wrapper");
       var info_wrapper = document.getElementById("skills_info_wrapper")
       var skills_obj = new Skills(skills_wrapper, info_wrapper);
-      }, 100);
-    }
-  }); 
+      }, 1000);
 }
 
 export default runJs;
