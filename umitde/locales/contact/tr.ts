@@ -1,5 +1,5 @@
 const tr = {
-    title: "İletişime Geç",
+    title: "İletişime geç",
     form: {
         name: {
             title: "Ad",
@@ -23,10 +23,10 @@ const tr = {
         },
     },
     motivate: {
-        title: "İletişime Geç",
-        first: "Merhaba demek için",
-        second: "Merhaba demek için",
-        last: "Merhaba demek için",
+        title: "İletişime geç",
+        first: "Freelance veya part time iş teklifi için",
+        second: "Açık kaynaklı projelerde yardım ve destek için",
+        last: "Sadece hal hatır sorup merhaba demek için",
         bottom: "Form doldurmak istemiyorsan <a href='mailto:umitde296@gmail.com'>umitde296@gmail.com</a> adresinden bana ulaşabilirsin."
     },
     seo: {

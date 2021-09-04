@@ -1,5 +1,5 @@
 const tr = {
-    title: "Contact With Me",
+    title: "Contact with me",
     form: {
         name: {
             title: "Name",
@@ -23,14 +23,14 @@ const tr = {
         },
     },
     motivate: {
-        title: "Contact With Me",
-        first: "Just say hi",
-        second: "Just say hi",
-        last: "Just say hi",
+        title: "Contact with me",
+        first: "For freelance job offer",
+        second: "For help and support about open source projects",
+        last: "Just asking and saying hello",
         bottom: "If you don't wanna apply form you can reach me at <a href='mailto:umitde296@gmail.com'>umitde296@gmail.com</a>"
     },
     seo: {
-        title: "Contact With Me",
+        title: "Contact with me",
         description: "Contact with Ümit Demir",
         "keywords": "contact, ümit demir, contact with ümit, contact, ümit, demir"
     }
