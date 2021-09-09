@@ -1,5 +1,3 @@
 # Umitde
 
-## To do before production
-
-- [ ] Email..
+maded with next js and typescript.
