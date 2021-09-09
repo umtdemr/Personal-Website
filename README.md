@@ -1,7 +1,4 @@
 # Personal Website
 
 
-This is my personal website.
-
-
-https://www.tutorialdocs.com/tutorial/swiper/api-parameters.html
+This is my personal website written with typescript and next js.
