@@ -3,11 +3,11 @@ const en = {
     description: `
     Hello, I'm Umit.<br />
     I am currently studying Computer Engineering at Düzce University. <br />I have been working as a part time full stack web developer since March 2019.
-    Now I think I've reached enough competence to get your freelance jobs 😉
+    I love developing apps with Javascript and python 🥳
     `,
     skills: {
-        title: "Technologies that i have used",
-        desc: "Technologies that i have used for my personal jobs or freelance jobs",
+        title: "Technologies that I have used",
+        desc: "Technologies that I have used for my personal jobs or freelance jobs",
         techs: {
             django: `
             Django is a Python-based free and open-source web framework that follows the model–template–views architectural pattern. It is maintained by the Django Software Foundation, an American independent organization established as a 501 non-profit.

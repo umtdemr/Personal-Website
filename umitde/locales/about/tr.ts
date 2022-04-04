@@ -2,8 +2,8 @@ const tr = {
     title: "Hakkımda",
     description: `
         Merhaba, ben Ümit.<br />
-        Şuanda Düzce Üniversitesinde Bilgisayar Mühendisliği okuyorum. <br />2019'un mart ayından beri part time full stack web developer olarak çalışıyorum.
-        Artık freelance işlerinizi alabileceğim kadar yetkinliğe ulaştığımı düşünüyorum 😉
+        Şu anda Düzce Üniversitesinde Bilgisayar Mühendisliği okuyorum. <br />2019'un mart ayından beri part time full stack web developer olarak çalışıyorum.
+        Javascript ve python ile uygulamalar geliştirmeye bayılıyorum 🥳
     `,
     skills: {
         title: "Kullandığım teknolojiler",
