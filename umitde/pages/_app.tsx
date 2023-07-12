@@ -4,8 +4,7 @@ import '../public/plugins/fontawesome/css/all.min.css'
 import type { AppProps } from 'next/app'
 import Router from 'next/router';
 import Layout from '../components/layout/layout'
-
-
+import { Analytics } from '@vercel/analytics/react';
 import NProgress from 'nprogress'; //nprogress module
 import 'nprogress/nprogress.css'; //styles of nprogress
 
@@ -17,9 +16,12 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+      <Analytics />
+    </>
   ) 
 }
 export default MyApp
